@@ -276,15 +276,15 @@
     justify-content:space-between;
     align-items:center;
     gap:12px;
-    padding:9px 13px 9px 9px;
+    padding:10px 13px 10px 9px;
     background:#fff;
     border:1px solid #efece3;
     border-radius:13px;
     font-size:13px;
   }
   .row .thumb{
-    width:54px;
-    height:54px;
+    width:56px;
+    height:56px;
     border-radius:9px;
     object-fit:cover;
     flex:0 0 auto;
@@ -292,9 +292,9 @@
     border:1px solid #efece3;
   }
   .row .info{ flex:1; min-width:0; }
-  .row .dim{ font-weight:700; color:var(--ink); display:block; }
+  .row .dim{ font-weight:700; color:var(--ink); display:block; font-size:13px; }
   .row .dim .code{ color:var(--green-dark); font-weight:800; }
-  .row .tag2{ display:block; font-size:11px; color:var(--muted); margin-top:1px; }
+  .row .tag2{ display:block; font-size:10.5px; color:var(--muted); margin-top:1px; }
   .row .pr{
     font-weight:800;
     color:var(--green-dark);
@@ -308,6 +308,38 @@
     font-weight:500;
     color:var(--muted);
     font-size:10px;
+  }
+  .row .pricegrid{
+    display:flex;
+    gap:6px;
+    margin-top:5px;
+    flex-wrap:wrap;
+  }
+  .row .pricegrid .pmain{
+    background:var(--cream);
+    border:1px solid #efece3;
+    border-radius:7px;
+    padding:3px 8px;
+    font-size:11px;
+    font-weight:600;
+    color:var(--muted);
+    white-space:nowrap;
+  }
+  .row .pricegrid .pmain b{
+    font-size:12.5px;
+    font-weight:800;
+    color:var(--green-dark);
+    margin-left:2px;
+  }
+  .row .ptiers{
+    margin-top:5px;
+    font-size:10.5px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+  .row .ptiers b{
+    color:var(--ink);
+    font-weight:700;
   }
 
   .disclaimer{
@@ -508,37 +540,240 @@
     <div class="screen-body">
       <p class="disclaimer" style="padding-top:0;">Mismo orden y códigos que el catálogo impreso — toca WhatsApp para ver por ciento o con impresión.</p>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/C1.jpg" alt="C-1"><div class="info"><div class="dim"><span class="code">C-1</span> · 10×11×6 cm</div></div><div class="pr">$2.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C2.jpg" alt="C-2"><div class="info"><div class="dim"><span class="code">C-2</span> · 27×14,5×7 cm</div></div><div class="pr">$3.50<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C3.jpg" alt="C-3"><div class="info"><div class="dim"><span class="code">C-3</span> · 38×21,5×10 cm</div></div><div class="pr">$5.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C4.jpg" alt="C-4"><div class="info"><div class="dim"><span class="code">C-4</span> · 50×28×16 cm</div></div><div class="pr">$10.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C5.jpg" alt="C-5"><div class="info"><div class="dim"><span class="code">C-5</span> · 21×10×8 cm</div></div><div class="pr">$3.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C6.jpg" alt="C-6"><div class="info"><div class="dim"><span class="code">C-6</span> · 26×12×10 cm</div></div><div class="pr">$3.50<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C7.jpg" alt="C-7"><div class="info"><div class="dim"><span class="code">C-7</span> · 25×15×13 cm</div></div><div class="pr">$4.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C8.jpg" alt="C-8"><div class="info"><div class="dim"><span class="code">C-8</span> · 27×24×15 cm</div></div><div class="pr">$5.50<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C9.jpg" alt="C-9"><div class="info"><div class="dim"><span class="code">C-9</span> · 37×28×15 cm</div></div><div class="pr">$7.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C10.jpg" alt="C-10"><div class="info"><div class="dim"><span class="code">C-10</span> · 36×11×10 cm</div></div><div class="pr">$5.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C11.jpg" alt="C-11"><div class="info"><div class="dim"><span class="code">C-11</span> · 40×25×22 cm</div></div><div class="pr">$8.50<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C12.jpg" alt="C-12"><div class="info"><div class="dim"><span class="code">C-12</span> · 40×22×15 cm</div></div><div class="pr">$7.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C13.jpg" alt="C-13"><div class="info"><div class="dim"><span class="code">C-13</span> · 16×9×6 cm</div></div><div class="pr">$2.30<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C14.jpg" alt="C-14"><div class="info"><div class="dim"><span class="code">C-14</span> · 21×10×6 cm</div></div><div class="pr">$2.50<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C15.jpg" alt="C-15"><div class="info"><div class="dim"><span class="code">C-15</span> · 40×30×10 cm</div></div><div class="pr">$7.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C16.jpg" alt="C-16"><div class="info"><div class="dim"><span class="code">C-16</span> · 20×20×5 cm</div></div><div class="pr">$3.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C17k.jpg" alt="C-17"><div class="info"><div class="dim"><span class="code">C-17</span> · 25×20×10 cm</div></div><div class="pr">$4.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C18.jpg" alt="C-18"><div class="info"><div class="dim"><span class="code">C-18</span> · 15×14×10 cm</div></div><div class="pr">$3.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C19.jpg" alt="C-19"><div class="info"><div class="dim"><span class="code">C-19</span> · 27×30×9 cm</div></div><div class="pr">$4.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C20.jpg" alt="C-20"><div class="info"><div class="dim"><span class="code">C-20</span> · 36×44×16 cm</div></div><div class="pr">$7.50<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB1.jpg" alt="SB#1"><div class="info"><div class="dim"><span class="code">SB#1</span> · 12×16×8 cm</div></div><div class="pr">$3.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB2.jpg" alt="SB#2"><div class="info"><div class="dim"><span class="code">SB#2</span> · 20×25×12 cm</div></div><div class="pr">$5.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB3.jpg" alt="SB#3"><div class="info"><div class="dim"><span class="code">SB#3</span> · 24×33×11,5 cm</div></div><div class="pr">$7.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB4.jpg" alt="SB#4"><div class="info"><div class="dim"><span class="code">SB#4</span> · 29×36×12 cm</div></div><div class="pr">$8.80<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB5.jpg" alt="SB#5"><div class="info"><div class="dim"><span class="code">SB#5</span> · 40×45×16 cm</div></div><div class="pr">$16.50<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB6.jpg" alt="SB#6"><div class="info"><div class="dim"><span class="code">SB#6</span> · 50×50×18 cm</div></div><div class="pr">$21.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/CX1.jpg" alt="CX-01"><div class="info"><div class="dim"><span class="code">CX-01</span> · 32×30×12,5 cm</div></div><div class="pr">$10.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/CX2.jpg" alt="CX-02"><div class="info"><div class="dim"><span class="code">CX-02</span> · 33×42×14 cm</div></div><div class="pr">$12.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/CX3.jpg" alt="CX-03"><div class="info"><div class="dim"><span class="code">CX-03</span> · 29×36×14 cm</div></div><div class="pr">$10.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C1.jpg" alt="C-1">
+          <div class="info">
+            <div class="dim"><span class="code">C-1</span> · 10×11×6 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$2.00</b></span><span class="pmain">Ciento <b>$13.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$38.00</b> · 300u <b>$64.00</b> · 500u <b>$90.00</b> · 1000u <b>$130.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C2.jpg" alt="C-2">
+          <div class="info">
+            <div class="dim"><span class="code">C-2</span> · 27×14,5×7 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$3.50</b></span><span class="pmain">Ciento <b>$25.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$50.00</b> · 300u <b>$100.00</b> · 500u <b>$150.00</b> · 1000u <b>$250.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C3.jpg" alt="C-3">
+          <div class="info">
+            <div class="dim"><span class="code">C-3</span> · 38×21,5×10 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$5.00</b></span><span class="pmain">Ciento <b>$38.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$68.00</b> · 300u <b>$144.00</b> · 500u <b>$220.00</b> · 1000u <b>$380.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C4.jpg" alt="C-4">
+          <div class="info">
+            <div class="dim"><span class="code">C-4</span> · 50×28×16 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$10.00</b></span><span class="pmain">Ciento <b>$75.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$115.00</b> · 300u <b>$265.00</b> · 500u <b>$415.00</b> · 1000u <b>$750.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C5.jpg" alt="C-5">
+          <div class="info">
+            <div class="dim"><span class="code">C-5</span> · 21×10×8 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$3.00</b></span><span class="pmain">Ciento <b>$23.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$48.00</b> · 300u <b>$94.00</b> · 500u <b>$140.00</b> · 1000u <b>$230.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C6.jpg" alt="C-6">
+          <div class="info">
+            <div class="dim"><span class="code">C-6</span> · 26×12×10 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$3.50</b></span><span class="pmain">Ciento <b>$25.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$50.00</b> · 300u <b>$100.00</b> · 500u <b>$150.00</b> · 1000u <b>$250.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C7.jpg" alt="C-7">
+          <div class="info">
+            <div class="dim"><span class="code">C-7</span> · 25×15×13 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$4.00</b></span><span class="pmain">Ciento <b>$30.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$60.00</b> · 300u <b>$120.00</b> · 500u <b>$180.00</b> · 1000u <b>$300.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C8.jpg" alt="C-8">
+          <div class="info">
+            <div class="dim"><span class="code">C-8</span> · 27×24×15 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$5.50</b></span><span class="pmain">Ciento <b>$40.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$80.00</b> · 300u <b>$160.00</b> · 500u <b>$240.00</b> · 1000u <b>$400.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C9.jpg" alt="C-9">
+          <div class="info">
+            <div class="dim"><span class="code">C-9</span> · 37×28×15 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.00</b></span><span class="pmain">Ciento <b>$52.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$92.00</b> · 300u <b>$196.00</b> · 500u <b>$300.00</b> · 1000u <b>$520.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C10.jpg" alt="C-10">
+          <div class="info">
+            <div class="dim"><span class="code">C-10</span> · 36×11×10 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$5.00</b></span><span class="pmain">Ciento <b>$38.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$68.00</b> · 300u <b>$144.00</b> · 500u <b>$220.00</b> · 1000u <b>$380.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C11.jpg" alt="C-11">
+          <div class="info">
+            <div class="dim"><span class="code">C-11</span> · 40×25×22 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$8.50</b></span><span class="pmain">Ciento <b>$65.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$105.00</b> · 300u <b>$235.00</b> · 500u <b>$365.00</b> · 1000u <b>$650.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C12.jpg" alt="C-12">
+          <div class="info">
+            <div class="dim"><span class="code">C-12</span> · 40×22×15 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.00</b></span><span class="pmain">Ciento <b>$52.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$92.00</b> · 300u <b>$196.00</b> · 500u <b>$300.00</b> · 1000u <b>$520.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C13.jpg" alt="C-13">
+          <div class="info">
+            <div class="dim"><span class="code">C-13</span> · 16×9×6 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$2.30</b></span><span class="pmain">Ciento <b>$14.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$39.00</b> · 300u <b>$67.00</b> · 500u <b>$95.00</b> · 1000u <b>$140.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C14.jpg" alt="C-14">
+          <div class="info">
+            <div class="dim"><span class="code">C-14</span> · 21×10×6 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$2.50</b></span><span class="pmain">Ciento <b>$18.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$43.00</b> · 300u <b>$79.00</b> · 500u <b>$115.00</b> · 1000u <b>$180.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C15.jpg" alt="C-15">
+          <div class="info">
+            <div class="dim"><span class="code">C-15</span> · 40×30×10 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.00</b></span><span class="pmain">Ciento <b>$52.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$92.00</b> · 300u <b>$196.00</b> · 500u <b>$300.00</b> · 1000u <b>$520.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C16.jpg" alt="C-16">
+          <div class="info">
+            <div class="dim"><span class="code">C-16</span> · 20×20×5 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$3.00</b></span><span class="pmain">Ciento <b>$20.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$50.00</b> · 300u <b>$90.00</b> · 500u <b>$130.00</b> · 1000u <b>$200.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C17k.jpg" alt="C-17">
+          <div class="info">
+            <div class="dim"><span class="code">C-17</span> · 25×20×10 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$4.00</b></span><span class="pmain">Ciento <b>$28.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$58.00</b> · 300u <b>$114.00</b> · 500u <b>$170.00</b> · 1000u <b>$280.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C18.jpg" alt="C-18">
+          <div class="info">
+            <div class="dim"><span class="code">C-18</span> · 15×14×10 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$3.00</b></span><span class="pmain">Ciento <b>$20.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$50.00</b> · 300u <b>$90.00</b> · 500u <b>$130.00</b> · 1000u <b>$200.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C19.jpg" alt="C-19">
+          <div class="info">
+            <div class="dim"><span class="code">C-19</span> · 27×30×9 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$4.00</b></span><span class="pmain">Ciento <b>$30.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$60.00</b> · 300u <b>$120.00</b> · 500u <b>$180.00</b> · 1000u <b>$300.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C20.jpg" alt="C-20">
+          <div class="info">
+            <div class="dim"><span class="code">C-20</span> · 36×44×16 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.50</b></span><span class="pmain">Ciento <b>$54.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$94.00</b> · 300u <b>$202.00</b> · 500u <b>$310.00</b> · 1000u <b>$540.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB1.jpg" alt="SB#1">
+          <div class="info">
+            <div class="dim"><span class="code">SB#1</span> · 12×16×8 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$3.00</b></span><span class="pmain">Ciento <b>$20.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$50.00</b> · 300u <b>$90.00</b> · 500u <b>$130.00</b> · 1000u <b>$200.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB2.jpg" alt="SB#2">
+          <div class="info">
+            <div class="dim"><span class="code">SB#2</span> · 20×25×12 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$5.00</b></span><span class="pmain">Ciento <b>$38.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$68.00</b> · 300u <b>$144.00</b> · 500u <b>$220.00</b> · 1000u <b>$380.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB3.jpg" alt="SB#3">
+          <div class="info">
+            <div class="dim"><span class="code">SB#3</span> · 24×33×11,5 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.00</b></span><span class="pmain">Ciento <b>$52.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$92.00</b> · 300u <b>$196.00</b> · 500u <b>$300.00</b> · 1000u <b>$520.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB4.jpg" alt="SB#4">
+          <div class="info">
+            <div class="dim"><span class="code">SB#4</span> · 29×36×12 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$8.80</b></span><span class="pmain">Ciento <b>$65.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$105.00</b> · 300u <b>$235.00</b> · 500u <b>$365.00</b> · 1000u <b>$650.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB5.jpg" alt="SB#5">
+          <div class="info">
+            <div class="dim"><span class="code">SB#5</span> · 40×45×16 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$16.50</b></span><span class="pmain">Ciento <b>$120.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$180.00</b> · 300u <b>$420.00</b> · 500u <b>$660.00</b> · 1000u <b>$1,200.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB6.jpg" alt="SB#6">
+          <div class="info">
+            <div class="dim"><span class="code">SB#6</span> · 50×50×18 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$21.00</b></span><span class="pmain">Ciento <b>$150.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$210.00</b> · 300u <b>$510.00</b> · 500u <b>$810.00</b> · 1000u <b>$1,500.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/CX1.jpg" alt="CX-01">
+          <div class="info">
+            <div class="dim"><span class="code">CX-01</span> · 32×30×12,5 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$10.00</b></span><span class="pmain">Ciento <b>$75.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$115.00</b> · 300u <b>$265.00</b> · 500u <b>$415.00</b> · 1000u <b>$750.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/CX2.jpg" alt="CX-02">
+          <div class="info">
+            <div class="dim"><span class="code">CX-02</span> · 33×42×14 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$90.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$130.00</b> · 300u <b>$310.00</b> · 500u <b>$490.00</b> · 1000u <b>$900.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/CX3.jpg" alt="CX-03">
+          <div class="info">
+            <div class="dim"><span class="code">CX-03</span> · 29×36×14 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$10.00</b></span><span class="pmain">Ciento <b>$80.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$120.00</b> · 300u <b>$280.00</b> · 500u <b>$440.00</b> · 1000u <b>$800.00</b></div>
+          </div>
+        </div>
       </div>
-      <p class="disclaimer">Precio mostrado por docena. También disponible por ciento, y desde 100 hasta 1000 unidades con impresión a un color.</p>
+      <p class="disclaimer">Todos los precios incluyen IVA. La impresión a 1 color aplica desde 100 unidades; para más colores o diseño completo, escríbenos por WhatsApp.</p>
       <div class="screen-cta">
         <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20kraft%20con%20manija." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
       </div>
@@ -554,12 +789,54 @@
     <div class="screen-body">
       <p class="disclaimer" style="padding-top:0;">Mismo orden que el catálogo impreso — cartulina de caña de azúcar, 150 g.</p>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/SB1e.jpg" alt="SB#1 eco"><div class="info"><div class="dim"><span class="code">SB#1 eco</span> · 12×16×8 cm</div></div><div class="pr">$4.20<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB2e.jpg" alt="SB#2 eco"><div class="info"><div class="dim"><span class="code">SB#2 eco</span> · 20×25×12 cm</div></div><div class="pr">$8.40<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB3e.jpg" alt="SB#3 eco"><div class="info"><div class="dim"><span class="code">SB#3 eco</span> · 24×33×11,5 cm</div></div><div class="pr">$12.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/SB4e.jpg" alt="SB#4 eco"><div class="info"><div class="dim"><span class="code">SB#4 eco</span> · 29×36×12 cm</div></div><div class="pr">$15.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C17b.jpg" alt="C-17 bristol"><div class="info"><div class="dim"><span class="code">C-17 bristol</span> · 25×20×10 cm</div></div><div class="pr">$7.80<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/C17c.jpg" alt="C-17 color"><div class="info"><div class="dim"><span class="code">C-17 color</span> · 25×20×10 cm</div><div class="tag2">rojo o negro</div></div><div class="pr">$10.80<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB1e.jpg" alt="SB#1 eco">
+          <div class="info">
+            <div class="dim"><span class="code">SB#1 eco</span> · 12×16×8 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$4.20</b></span><span class="pmain">Ciento <b>$30.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$60.00</b> · 300u <b>$120.00</b> · 500u <b>$180.00</b> · 1000u <b>$300.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB2e.jpg" alt="SB#2 eco">
+          <div class="info">
+            <div class="dim"><span class="code">SB#2 eco</span> · 20×25×12 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$8.40</b></span><span class="pmain">Ciento <b>$65.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$95.00</b> · 300u <b>$225.00</b> · 500u <b>$355.00</b> · 1000u <b>$650.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB3e.jpg" alt="SB#3 eco">
+          <div class="info">
+            <div class="dim"><span class="code">SB#3 eco</span> · 24×33×11,5 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$90.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$130.00</b> · 300u <b>$310.00</b> · 500u <b>$490.00</b> · 1000u <b>$900.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/SB4e.jpg" alt="SB#4 eco">
+          <div class="info">
+            <div class="dim"><span class="code">SB#4 eco</span> · 29×36×12 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$15.00</b></span><span class="pmain">Ciento <b>$115.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$155.00</b> · 300u <b>$385.00</b> · 500u <b>$615.00</b> · 1000u <b>$1,150.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C17b.jpg" alt="C-17 bristol">
+          <div class="info">
+            <div class="dim"><span class="code">C-17 bristol</span> · 25×20×10 cm</div><div class="tag2">cartulina natural</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.80</b></span><span class="pmain">Ciento <b>$60.00</b></span></div>
+            <div class="ptiers">Impresión 1 color: 100u <b>$90.00</b> · 300u <b>$210.00</b> · 500u <b>$330.00</b> · 1000u <b>$600.00</b></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/C17c.jpg" alt="C-17 color">
+          <div class="info">
+            <div class="dim"><span class="code">C-17 color</span> · 25×20×10 cm</div><div class="tag2">rojo o negro</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$10.80</b></span><span class="pmain">Ciento <b>$80.00</b></span></div>
+            <div class="ptiers">Con impresión personalizada: consultar precio</div>
+          </div>
+        </div>
       </div>
       <div class="screen-cta">
         <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20ecol%C3%B3gicas%20de%20cartulina." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
@@ -578,75 +855,293 @@
 
       <div class="subhead">🎁 Cajas Regalo</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B7.jpg" alt="B7"><div class="info"><div class="dim"><span class="code">B7</span> · 10×15×15 cm</div></div><div class="pr">$7.20<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B8.jpg" alt="B8"><div class="info"><div class="dim"><span class="code">B8</span> · 15×15×15 cm</div></div><div class="pr">$9.60<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B30.jpg" alt="B30"><div class="info"><div class="dim"><span class="code">B30</span> · 17,5×15,5×12 cm</div><div class="tag2">estampado "Feliz Día"</div></div><div class="pr">$12.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B10.jpg" alt="B10"><div class="info"><div class="dim"><span class="code">B10</span> · 15×20×20 cm</div></div><div class="pr">$16.60<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B9.jpg" alt="B9"><div class="info"><div class="dim"><span class="code">B9</span> · 20×20×20 cm</div></div><div class="pr">$18.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B11.jpg" alt="B11"><div class="info"><div class="dim"><span class="code">B11</span> · 25×25×25 cm</div></div><div class="pr">$30.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B7.jpg" alt="B7">
+          <div class="info">
+            <div class="dim"><span class="code">B7</span> · 10×15×15 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.20</b></span><span class="pmain">Ciento <b>$55.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B8.jpg" alt="B8">
+          <div class="info">
+            <div class="dim"><span class="code">B8</span> · 15×15×15 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$9.60</b></span><span class="pmain">Ciento <b>$75.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B30.jpg" alt="B30">
+          <div class="info">
+            <div class="dim"><span class="code">B30</span> · 17,5×15,5×12 cm</div><div class="tag2">estampado "Feliz Día"</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$95.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B10.jpg" alt="B10">
+          <div class="info">
+            <div class="dim"><span class="code">B10</span> · 15×20×20 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$16.60</b></span><span class="pmain">Ciento <b>$130.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B9.jpg" alt="B9">
+          <div class="info">
+            <div class="dim"><span class="code">B9</span> · 20×20×20 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$18.00</b></span><span class="pmain">Ciento <b>$140.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B11.jpg" alt="B11">
+          <div class="info">
+            <div class="dim"><span class="code">B11</span> · 25×25×25 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$30.00</b></span><span class="pmain">Ciento <b>$230.00</b></span></div>
+          </div>
+        </div>
       </div>
 
       <div class="subhead">🥡 Tipo Lonchera</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B1.jpg" alt="B1"><div class="info"><div class="dim"><span class="code">B1</span> · 14×20×12 cm</div></div><div class="pr">$7.20<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B2.jpg" alt="B2"><div class="info"><div class="dim"><span class="code">B2</span> · 22×22×16 cm</div></div><div class="pr">$15.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B3.jpg" alt="B3"><div class="info"><div class="dim"><span class="code">B3</span> · 13,5×26×20 cm</div></div><div class="pr">$15.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B26.jpg" alt="B26"><div class="info"><div class="dim"><span class="code">B26</span> · 36×34×23 cm</div><div class="tag2">tamaño grande</div></div><div class="pr">$30.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B1.jpg" alt="B1">
+          <div class="info">
+            <div class="dim"><span class="code">B1</span> · 14×20×12 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.20</b></span><span class="pmain">Ciento <b>$58.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B2.jpg" alt="B2">
+          <div class="info">
+            <div class="dim"><span class="code">B2</span> · 22×22×16 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$15.00</b></span><span class="pmain">Ciento <b>$115.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B3.jpg" alt="B3">
+          <div class="info">
+            <div class="dim"><span class="code">B3</span> · 13,5×26×20 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$15.00</b></span><span class="pmain">Ciento <b>$115.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B26.jpg" alt="B26">
+          <div class="info">
+            <div class="dim"><span class="code">B26</span> · 36×34×23 cm</div><div class="tag2">tamaño grande</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$30.00</b></span><span class="pmain">Ciento <b>$225.00</b></span></div>
+          </div>
+        </div>
       </div>
 
       <div class="subhead">🍺 Six Pack Cervecero</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B4.jpg" alt="B4"><div class="info"><div class="dim"><span class="code">B4</span> · 23×18×12 cm</div><div class="tag2">botella 350 ml</div></div><div class="pr">$12.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B5.jpg" alt="B5"><div class="info"><div class="dim"><span class="code">B5</span> · 16×20×13,5 cm</div><div class="tag2">botella 330 ml, dos colores</div></div><div class="pr">$12.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B6.jpg" alt="B6"><div class="info"><div class="dim"><span class="code">B6</span> · 36×15×7,5 cm</div><div class="tag2">para vinos</div></div><div class="pr">$12.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B4.jpg" alt="B4">
+          <div class="info">
+            <div class="dim"><span class="code">B4</span> · 23×18×12 cm</div><div class="tag2">botella 350 ml</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$95.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B5.jpg" alt="B5">
+          <div class="info">
+            <div class="dim"><span class="code">B5</span> · 16×20×13,5 cm</div><div class="tag2">botella 330 ml, dos colores</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$95.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B6.jpg" alt="B6">
+          <div class="info">
+            <div class="dim"><span class="code">B6</span> · 36×15×7,5 cm</div><div class="tag2">para vinos</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$95.00</b></span></div>
+          </div>
+        </div>
       </div>
 
       <div class="subhead">🍕 Caja Pizza</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B12.jpg" alt="B12"><div class="info"><div class="dim"><span class="code">B12</span> · 22×22 cm</div></div><div class="pr">$3.60<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B13.jpg" alt="B13"><div class="info"><div class="dim"><span class="code">B13</span> · 26×26 cm</div></div><div class="pr">$4.80<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B14.jpg" alt="B14"><div class="info"><div class="dim"><span class="code">B14</span> · 31,5×31,5 cm</div></div><div class="pr">$7.20<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B15.jpg" alt="B15"><div class="info"><div class="dim"><span class="code">B15</span> · 38×38 cm</div></div><div class="pr">$10.32<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B16.jpg" alt="B16"><div class="info"><div class="dim"><span class="code">B16</span> · 42×42 cm</div></div><div class="pr">$10.80<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B12.jpg" alt="B12">
+          <div class="info">
+            <div class="dim"><span class="code">B12</span> · 22×22 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$3.60</b></span><span class="pmain">Ciento <b>$28.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B13.jpg" alt="B13">
+          <div class="info">
+            <div class="dim"><span class="code">B13</span> · 26×26 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$4.80</b></span><span class="pmain">Ciento <b>$38.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B14.jpg" alt="B14">
+          <div class="info">
+            <div class="dim"><span class="code">B14</span> · 31,5×31,5 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.20</b></span><span class="pmain">Ciento <b>$58.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B15.jpg" alt="B15">
+          <div class="info">
+            <div class="dim"><span class="code">B15</span> · 38×38 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$10.32</b></span><span class="pmain">Ciento <b>$84.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B16.jpg" alt="B16">
+          <div class="info">
+            <div class="dim"><span class="code">B16</span> · 42×42 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$10.80</b></span><span class="pmain">Ciento <b>$88.00</b></span></div>
+          </div>
+        </div>
       </div>
 
       <div class="subhead">🍔 Caja Hamburguesas</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B17.jpg" alt="B17"><div class="info"><div class="dim"><span class="code">B17</span> · 8×25×20 cm</div></div><div class="pr">$12.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B17.jpg" alt="B17">
+          <div class="info">
+            <div class="dim"><span class="code">B17</span> · 8×25×20 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$95.00</b></span></div>
+          </div>
+        </div>
       </div>
 
       <div class="subhead">📮 Caja para Envíos</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B19.jpg" alt="B19"><div class="info"><div class="dim"><span class="code">B19</span> · 6×23×17 cm</div></div><div class="pr">$12.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B29.jpg" alt="B29"><div class="info"><div class="dim"><span class="code">B29</span> · 6×17×12 cm</div></div><div class="pr">$7.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B31.jpg" alt="B31"><div class="info"><div class="dim"><span class="code">B31</span> · 6,5×23×9 cm</div><div class="tag2">también para copas</div></div><div class="pr">$7.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B18.jpg" alt="B18"><div class="info"><div class="dim"><span class="code">B18</span> · 6×22×22 cm</div></div><div class="pr">$15.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B20.jpg" alt="B20"><div class="info"><div class="dim"><span class="code">B20</span> · 8×25,5×20,5 cm</div></div><div class="pr">$18.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B22.jpg" alt="B22"><div class="info"><div class="dim"><span class="code">B22</span> · 10,5×31×21 cm</div></div><div class="pr">$24.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B21.jpg" alt="B21"><div class="info"><div class="dim"><span class="code">B21</span> · 10,5×32×25 cm</div></div><div class="pr">$30.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B23.jpg" alt="B23"><div class="info"><div class="dim"><span class="code">B23</span> · 11×33×22 cm</div></div><div class="pr">$30.00<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B24.jpg" alt="B24"><div class="info"><div class="dim"><span class="code">B24</span> · 11×38×28 cm</div></div><div class="pr">$36.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B19.jpg" alt="B19">
+          <div class="info">
+            <div class="dim"><span class="code">B19</span> · 6×23×17 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$12.00</b></span><span class="pmain">Ciento <b>$95.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B29.jpg" alt="B29">
+          <div class="info">
+            <div class="dim"><span class="code">B29</span> · 6×17×12 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.00</b></span><span class="pmain">Ciento <b>$53.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B31.jpg" alt="B31">
+          <div class="info">
+            <div class="dim"><span class="code">B31</span> · 6,5×23×9 cm</div><div class="tag2">también para copas</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$7.00</b></span><span class="pmain">Ciento <b>$53.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B18.jpg" alt="B18">
+          <div class="info">
+            <div class="dim"><span class="code">B18</span> · 6×22×22 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$15.00</b></span><span class="pmain">Ciento <b>$115.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B20.jpg" alt="B20">
+          <div class="info">
+            <div class="dim"><span class="code">B20</span> · 8×25,5×20,5 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$18.00</b></span><span class="pmain">Ciento <b>$140.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B22.jpg" alt="B22">
+          <div class="info">
+            <div class="dim"><span class="code">B22</span> · 10,5×31×21 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$24.00</b></span><span class="pmain">Ciento <b>$180.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B21.jpg" alt="B21">
+          <div class="info">
+            <div class="dim"><span class="code">B21</span> · 10,5×32×25 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$30.00</b></span><span class="pmain">Ciento <b>$230.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B23.jpg" alt="B23">
+          <div class="info">
+            <div class="dim"><span class="code">B23</span> · 11×33×22 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$30.00</b></span><span class="pmain">Ciento <b>$225.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B24.jpg" alt="B24">
+          <div class="info">
+            <div class="dim"><span class="code">B24</span> · 11×38×28 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$36.00</b></span><span class="pmain">Ciento <b>$270.00</b></span></div>
+          </div>
+        </div>
       </div>
 
       <div class="subhead">🎩 Caja para Sombreros</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B25.jpg" alt="B25"><div class="info"><div class="dim"><span class="code">B25</span> · 15×35×35 cm</div></div><div class="pr">$30.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B25.jpg" alt="B25">
+          <div class="info">
+            <div class="dim"><span class="code">B25</span> · 15×35×35 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$30.00</b></span><span class="pmain">Ciento <b>$225.00</b></span></div>
+          </div>
+        </div>
       </div>
 
       <div class="subhead">🥤 Porta Vasos x2 / 🍳 Bandeja Desayuno</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B27.jpg" alt="B27"><div class="info"><div class="dim"><span class="code">B27</span> · 15×18×9 cm</div></div><div class="pr">$4.80<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B28.jpg" alt="B28"><div class="info"><div class="dim"><span class="code">B28</span> · 6×30×25 cm</div></div><div class="pr">$9.00<small>docena</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B27.jpg" alt="B27">
+          <div class="info">
+            <div class="dim"><span class="code">B27</span> · 15×18×9 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$4.80</b></span><span class="pmain">Ciento <b>$35.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B28.jpg" alt="B28">
+          <div class="info">
+            <div class="dim"><span class="code">B28</span> · 6×30×25 cm</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$9.00</b></span><span class="pmain">Ciento <b>$170.00</b></span></div>
+          </div>
+        </div>
       </div>
 
-      <div class="subhead">🧰 Multiusos / 🏺 Jarro / 📄 Plancha</div>
+      <div class="subhead">🧰 Multiusos / 🏺 Jarro</div>
       <div class="rows">
-        <div class="row"><img class="thumb" src="assets/products/items/B32.jpg" alt="B32"><div class="info"><div class="dim"><span class="code">B32</span> · 7×12×8 cm</div><div class="tag2">multiusos</div></div><div class="pr">$5.40<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B33.jpg" alt="B33"><div class="info"><div class="dim"><span class="code">B33</span> · 10×10×9 cm</div><div class="tag2">para jarro</div></div><div class="pr">$5.40<small>docena</small></div></div>
-        <div class="row"><img class="thumb" src="assets/products/items/B34.jpg" alt="B34"><div class="info"><div class="dim"><span class="code">B34</span> · plancha 150×120 cm, 2mm</div><div class="tag2">color café ambos lados</div></div><div class="pr">$3.50<small>c/u</small></div></div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B32.jpg" alt="B32">
+          <div class="info">
+            <div class="dim"><span class="code">B32</span> · 7×12×8 cm</div><div class="tag2">multiusos</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$5.40</b></span><span class="pmain">Ciento <b>$40.00</b></span></div>
+          </div>
+        </div>
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B33.jpg" alt="B33">
+          <div class="info">
+            <div class="dim"><span class="code">B33</span> · 10×10×9 cm</div><div class="tag2">para jarro</div>
+            <div class="pricegrid"><span class="pmain">Docena <b>$5.40</b></span><span class="pmain">Ciento <b>$40.00</b></span></div>
+          </div>
+        </div>
       </div>
 
-      <p class="disclaimer">Precio mostrado por docena. Todas por ciento y a partir de 300 unidades — consultar precio.</p>
+      <div class="subhead">📄 Plancha de Cartón</div>
+      <div class="rows">
+        <div class="row">
+          <img class="thumb" src="assets/products/items/B34.jpg" alt="B34">
+          <div class="info">
+            <div class="dim"><span class="code">B34</span> · plancha 150×120 cm, 2mm</div><div class="tag2">color café ambos lados</div>
+            <div class="pricegrid"><span class="pmain">Por unidad <b>$3.50</b></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subhead">📦 Caja para Envíos (por unidad)</div>
+      <p class="disclaimer" style="padding:0 0 8px;">Venta por unidad, pedido mínimo 50 cajas. Cartón color café en ambos lados.</p>
+      <div class="rows">
+        <div class="row"><div class="info"><div class="dim">7,5×28×28 cm</div></div><div class="pr">$2.00<small>c/u</small></div></div>
+        <div class="row"><div class="info"><div class="dim">30×30×12 cm</div></div><div class="pr">$3.00<small>c/u</small></div></div>
+        <div class="row"><div class="info"><div class="dim">38×32×9 cm</div></div><div class="pr">$3.00<small>c/u</small></div></div>
+        <div class="row"><div class="info"><div class="dim">25×25×10 cm</div></div><div class="pr">$2.00<small>c/u</small></div></div>
+        <div class="row"><div class="info"><div class="dim">31×16,8×10,5 cm</div></div><div class="pr">$1.85<small>c/u</small></div></div>
+      </div>
+
+      <p class="disclaimer">Todos los precios incluyen IVA. A partir de 300 unidades (docena/ciento) consulta precio especial por WhatsApp.</p>
       <div class="screen-cta">
         <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20cajas%20de%20cart%C3%B3n." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
       </div>
