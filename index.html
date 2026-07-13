@@ -34,12 +34,13 @@
     background:var(--cream);
     box-shadow:0 0 40px rgba(0,0,0,0.06);
     position:relative;
+    overflow:hidden;
   }
 
   /* HERO */
   .hero{
     background:linear-gradient(160deg,#2b3245 0%, var(--navy) 60%, #1a1f2b 100%);
-    padding:36px 24px 28px;
+    padding:32px 24px 26px;
     text-align:center;
     border-bottom:6px solid var(--green);
     position:relative;
@@ -53,15 +54,15 @@
     top:-80px; right:-80px;
   }
   .hero img{
-    width:min(78%,300px);
+    width:min(72%,260px);
     height:auto;
     display:block;
-    margin:0 auto 10px;
+    margin:0 auto 8px;
     filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35));
   }
   .hero p.tag{
     color:#e8ecef;
-    font-size:13px;
+    font-size:12.5px;
     letter-spacing:0.06em;
     text-transform:uppercase;
     margin:6px 0 0;
@@ -69,7 +70,7 @@
   }
   .hero p.sub{
     color:var(--green-light);
-    font-size:12px;
+    font-size:11.5px;
     margin:4px 0 0;
     letter-spacing:0.03em;
   }
@@ -106,120 +107,133 @@
     border:1.5px solid #e5e2da;
   }
 
-  /* CATEGORY QUICK NAV */
-  .catnav{
-    display:flex;
-    gap:8px;
-    overflow-x:auto;
-    padding:16px 20px 4px;
-    scrollbar-width:none;
+  /* HOME TITLE */
+  .home-title{
+    padding:24px 20px 4px;
+    text-align:center;
   }
-  .catnav::-webkit-scrollbar{display:none;}
-  .catnav a{
-    flex:0 0 auto;
-    background:#fff;
-    border:1.5px solid #e5e2da;
+  .home-title h2{
+    font-size:16px;
     color:var(--ink);
-    text-decoration:none;
-    font-size:12.5px;
-    font-weight:700;
-    padding:9px 14px;
-    border-radius:999px;
-    white-space:nowrap;
+    margin:0 0 2px;
   }
-
-  /* SECTION TITLES */
-  .section{
-    padding:22px 20px 4px;
-  }
-  .section h2{
-    font-size:15px;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--green-dark);
-    margin:0 0 4px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-  }
-  .section h2::after{
-    content:"";
-    flex:1;
-    height:1px;
-    background:linear-gradient(90deg, rgba(30,122,52,0.35), transparent);
-  }
-  .section p.note{
+  .home-title p{
     font-size:12px;
     color:var(--muted);
-    margin:2px 0 12px;
+    margin:0;
   }
 
-  /* ACCORDION CATEGORY BUTTONS */
-  .cat{
-    background:var(--card);
-    border:1px solid #efece3;
-    border-radius:16px;
-    margin:0 20px 12px;
-    overflow:hidden;
-    box-shadow:0 2px 6px rgba(35,43,59,0.04);
+  /* BIG SQUARE APP GRID */
+  .grid-menu{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    padding:18px 24px 6px;
+    max-width:420px;
+    margin:0 auto;
   }
-  .cat summary{
-    list-style:none;
-    cursor:pointer;
-    padding:14px 16px;
+  .grid-btn{
+    aspect-ratio:1/1;
+    border-radius:22px;
+    border:none;
     display:flex;
-    align-items:center;
-    gap:12px;
-    font-weight:800;
-    font-size:15px;
-    color:var(--ink);
-  }
-  .cat summary::-webkit-details-marker{ display:none; }
-  .cat summary .icon{
-    width:34px;height:34px;
-    border-radius:9px;
-    background:linear-gradient(160deg, var(--green-light), var(--green));
-    display:flex;
+    flex-direction:column;
     align-items:center;
     justify-content:center;
-    font-size:16px;
-    flex:0 0 auto;
+    gap:10px;
+    text-align:center;
+    padding:14px;
+    cursor:pointer;
+    box-shadow:0 6px 16px rgba(35,43,59,0.10);
+    transition:transform .15s ease;
+    font-family:inherit;
   }
-  .cat summary .titles{ display:flex; flex-direction:column; line-height:1.2; }
-  .cat summary .titles small{ font-weight:500; font-size:11px; color:var(--muted); }
-  .cat summary .chev{
-    margin-left:auto;
-    transition:transform .2s ease;
-    color:var(--muted);
-    flex:0 0 auto;
+  .grid-btn:active{ transform:scale(0.95); }
+  .grid-btn .emoji{
+    font-size:40px;
+    line-height:1;
   }
-  .cat[open] summary .chev{ transform:rotate(180deg); }
-  .cat[open] summary{ border-bottom:1px solid #efece3; }
-  .cat-body{ padding:14px 16px 16px; }
+  .grid-btn .label{
+    font-weight:800;
+    font-size:14px;
+    color:#fff;
+  }
+  .grid-btn .sub{
+    font-size:10.5px;
+    color:rgba(255,255,255,0.85);
+    font-weight:600;
+  }
+  .grid-btn.b1{ background:linear-gradient(150deg,#5b6579,var(--navy)); }
+  .grid-btn.b2{ background:linear-gradient(150deg,#a9793f,var(--brown)); }
+  .grid-btn.b3{ background:linear-gradient(150deg,var(--green-light),var(--green-dark)); }
+  .grid-btn.b4{ background:linear-gradient(150deg,#8a6a4a,#5c4326); }
+
+  /* SCREENS (app-like views) */
+  .screen{
+    background:var(--cream);
+    min-height:100vh;
+  }
+  .screen-head{
+    position:sticky;
+    top:0;
+    z-index:5;
+    background:var(--navy);
+    color:#fff;
+    padding:16px 16px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    border-bottom:4px solid var(--green);
+  }
+  .back-btn{
+    background:rgba(255,255,255,0.12);
+    border:none;
+    color:#fff;
+    font-weight:700;
+    font-size:13.5px;
+    padding:9px 12px;
+    border-radius:10px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    flex:0 0 auto;
+    font-family:inherit;
+  }
+  .back-btn:active{ transform:scale(0.96); }
+  .screen-head .stitle{
+    display:flex;
+    flex-direction:column;
+    line-height:1.2;
+  }
+  .screen-head .stitle b{ font-size:15px; }
+  .screen-head .stitle small{ font-size:11px; color:var(--green-light); font-weight:600; }
+
+  .screen-body{ padding:18px 20px 8px; }
 
   .gallery{
     display:flex;
     gap:8px;
     overflow-x:auto;
-    margin:0 0 14px;
+    margin:0 0 16px;
     padding-bottom:2px;
     scrollbar-width:none;
   }
   .gallery::-webkit-scrollbar{display:none;}
   .gallery img{
-    height:120px;
+    height:130px;
     width:auto;
-    border-radius:10px;
+    border-radius:12px;
     object-fit:cover;
     flex:0 0 auto;
-    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+    box-shadow:0 4px 10px rgba(0,0,0,0.14);
   }
 
   .subhead{
     display:flex;
     align-items:center;
     gap:8px;
-    margin:16px 0 6px;
+    margin:18px 0 8px;
     font-size:12px;
     font-weight:800;
     text-transform:uppercase;
@@ -228,29 +242,29 @@
   }
   .subhead:first-of-type{ margin-top:0; }
   .subhead img{
-    width:36px;height:36px;
+    width:38px;height:38px;
     border-radius:8px;
     object-fit:cover;
     flex:0 0 auto;
   }
 
-  .rows{ display:flex; flex-direction:column; gap:6px; }
+  .rows{ display:flex; flex-direction:column; gap:7px; }
   .row{
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:10px;
-    padding:9px 11px;
-    background:var(--cream);
-    border-radius:9px;
-    font-size:12.5px;
+    padding:11px 13px;
+    background:#fff;
+    border:1px solid #efece3;
+    border-radius:11px;
+    font-size:13px;
   }
   .row .dim{ font-weight:700; color:var(--ink); }
-  .row .tag2{ display:block; font-weight:500; color:var(--muted); font-size:11px; }
   .row .pr{
     font-weight:800;
     color:var(--green-dark);
-    font-size:12.5px;
+    font-size:13px;
     white-space:nowrap;
     text-align:right;
   }
@@ -262,10 +276,16 @@
   }
 
   .disclaimer{
-    padding:14px 24px 4px;
+    padding:14px 2px 4px;
     font-size:11.5px;
     color:var(--muted);
     line-height:1.5;
+  }
+
+  .screen-cta{
+    display:flex;
+    gap:10px;
+    padding:18px 2px 24px;
   }
 
   /* PAYMENT */
@@ -325,46 +345,87 @@
     font-size:10.5px;
     color:#8a93a3;
   }
+
+  [hidden]{ display:none !important; }
 </style>
 </head>
 <body>
 <div class="page">
 
-  <div class="hero">
-    <img src="assets/logo.png" alt="Sofi Graf">
-    <p class="tag">Fabricantes de Bolsas de Papel y Cajas</p>
-    <p class="sub">🍃 Empaque eco-friendly · Quito, Ecuador</p>
+  <!-- ============ HOME ============ -->
+  <div id="home">
+
+    <div class="hero">
+      <img src="assets/logo.png" alt="Sofi Graf">
+      <p class="tag">Fabricantes de Bolsas de Papel y Cajas</p>
+      <p class="sub">🍃 Empaque eco-friendly · Quito, Ecuador</p>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20de%20papel." target="_blank" rel="noopener">
+        💬 WhatsApp
+      </a>
+      <a class="btn btn-secondary" href="tel:+59322555684">
+        📞 Llamar
+      </a>
+    </div>
+
+    <div class="home-title">
+      <h2>Elige el tipo de funda o caja</h2>
+      <p>Toca una categoría para ver fotos, medidas y precios</p>
+    </div>
+
+    <div class="grid-menu">
+      <button class="grid-btn b1" onclick="showScreen('screen-ventana')">
+        <span class="emoji">🪟</span>
+        <span class="label">Con ventana</span>
+        <span class="sub">9 medidas</span>
+      </button>
+      <button class="grid-btn b2" onclick="showScreen('screen-kraft')">
+        <span class="emoji">👜</span>
+        <span class="label">Kraft</span>
+        <span class="sub">29 medidas</span>
+      </button>
+      <button class="grid-btn b3" onclick="showScreen('screen-eco')">
+        <span class="emoji">🌿</span>
+        <span class="label">Ecológicas</span>
+        <span class="sub">Cartulina</span>
+      </button>
+      <button class="grid-btn b4" onclick="showScreen('screen-cajas')">
+        <span class="emoji">📦</span>
+        <span class="label">Cajas</span>
+        <span class="sub">13 tipos</span>
+      </button>
+    </div>
+
+    <div class="pay">
+      <span class="emoji">💳</span>
+      <span>Aceptamos todas las tarjetas de crédito y débito (Visa, Mastercard, Diners Club, PacifiCard, Discover).</span>
+    </div>
+
+    <footer>
+      <div class="leaf">🌿</div>
+      <h3>Sofi Graf</h3>
+      <p>Fabricantes de Bolsas de Papel y Cajas</p>
+      <div class="contact-list">
+        <div class="contact-row">📍 Venezuela N17-54 y Bogotá, Quito</div>
+        <div class="contact-row">👤 Kleber Palomeque</div>
+        <div class="contact-row">📞 <a href="tel:+59322555684">022 555 684</a></div>
+        <div class="contact-row">💬 <a href="https://wa.me/593979707152" target="_blank" rel="noopener">0979 707 152</a></div>
+        <div class="contact-row">✉️ <a href="mailto:sofigraf41@gmail.com">sofigraf41@gmail.com</a></div>
+      </div>
+      <p class="badge">Menú digital · actualizado agosto 2024</p>
+    </footer>
+
   </div>
 
-  <div class="cta-row">
-    <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20de%20papel." target="_blank" rel="noopener">
-      💬 WhatsApp
-    </a>
-    <a class="btn btn-secondary" href="tel:+59322555684">
-      📞 Llamar
-    </a>
-  </div>
-
-  <div class="catnav" id="catnav">
-    <a href="#cat-ventana">🪟 Con ventana</a>
-    <a href="#cat-kraft">👜 Kraft</a>
-    <a href="#cat-eco">🌿 Ecológicas</a>
-    <a href="#cat-cajas">📦 Cajas</a>
-  </div>
-
-  <div class="section">
-    <h2>Elige el tipo de funda o caja</h2>
-    <p class="note">Toca cada categoría para ver fotos, medidas y precios</p>
-  </div>
-
-  <!-- CON VENTANA -->
-  <details class="cat" id="cat-ventana">
-    <summary>
-      <div class="icon">🪟</div>
-      <div class="titles">Fundas con / sin ventana<small>9 medidas · precio por 100 uds</small></div>
-      <span class="chev">▾</span>
-    </summary>
-    <div class="cat-body">
+  <!-- ============ SCREEN: CON VENTANA ============ -->
+  <div id="screen-ventana" class="screen" hidden>
+    <div class="screen-head">
+      <button class="back-btn" onclick="showHome()">← Volver</button>
+      <div class="stitle"><b>🪟 Con / sin ventana</b><small>Precio por 100 unidades (USD)</small></div>
+    </div>
+    <div class="screen-body">
       <div class="subhead">Sin ventana</div>
       <div class="rows">
         <div class="row"><div class="dim">9 × 14 cm</div><div class="pr">$22.64<small>/100u</small></div></div>
@@ -380,17 +441,20 @@
         <div class="row"><div class="dim">25 × 35 cm</div><div class="pr">$84.00<small>/100u</small></div></div>
         <div class="row"><div class="dim">30 × 40 cm</div><div class="pr">$98.00<small>/100u</small></div></div>
       </div>
+      <p class="disclaimer">* Precios referenciales, sujetos a confirmación. Consulta descuentos por volumen y personalización con tu marca/logo.</p>
+      <div class="screen-cta">
+        <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20con%2Fsin%20ventana." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+      </div>
     </div>
-  </details>
+  </div>
 
-  <!-- FUNDAS KRAFT CON MANIJA -->
-  <details class="cat" id="cat-kraft">
-    <summary>
-      <div class="icon">👜</div>
-      <div class="titles">Fundas Kraft con manija<small>29 medidas · líneas C, SB y CX</small></div>
-      <span class="chev">▾</span>
-    </summary>
-    <div class="cat-body">
+  <!-- ============ SCREEN: KRAFT ============ -->
+  <div id="screen-kraft" class="screen" hidden>
+    <div class="screen-head">
+      <button class="back-btn" onclick="showHome()">← Volver</button>
+      <div class="stitle"><b>👜 Fundas Kraft con manija</b><small>Líneas C, SB y CX · precio por docena</small></div>
+    </div>
+    <div class="screen-body">
       <div class="gallery">
         <img src="assets/products/kraft-1.jpg" alt="Funda kraft con manija de cordón">
         <img src="assets/products/kraft-2.jpg" alt="Funda kraft grande Sofi Graf">
@@ -426,18 +490,20 @@
         <div class="row"><div class="dim">SB#5 · 40×45×16 cm</div><div class="pr">$16.50<small>docena</small></div></div>
         <div class="row"><div class="dim">SB#6 · 50×50×18 cm</div><div class="pr">$21.00<small>docena</small></div></div>
       </div>
-      <p class="disclaimer" style="padding:10px 0 0;">Precio mostrado por docena. También disponible por ciento, y desde 100 hasta 1000 unidades con impresión a un color — consulta por WhatsApp.</p>
+      <p class="disclaimer">Precio mostrado por docena. También disponible por ciento, y desde 100 hasta 1000 unidades con impresión a un color.</p>
+      <div class="screen-cta">
+        <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20kraft%20con%20manija." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+      </div>
     </div>
-  </details>
+  </div>
 
-  <!-- ECOLÓGICAS -->
-  <details class="cat" id="cat-eco">
-    <summary>
-      <div class="icon">🌿</div>
-      <div class="titles">Fundas Ecológicas (Cartulina)<small>Papel de caña de azúcar, 150 g</small></div>
-      <span class="chev">▾</span>
-    </summary>
-    <div class="cat-body">
+  <!-- ============ SCREEN: ECOLÓGICAS ============ -->
+  <div id="screen-eco" class="screen" hidden>
+    <div class="screen-head">
+      <button class="back-btn" onclick="showHome()">← Volver</button>
+      <div class="stitle"><b>🌿 Fundas Ecológicas</b><small>Cartulina, papel de caña de azúcar 150 g</small></div>
+    </div>
+    <div class="screen-body">
       <div class="gallery">
         <img src="assets/products/eco-1.jpg" alt="Funda de cartulina ecológica natural">
         <img src="assets/products/eco-2.jpg" alt="Funda de cartulina ecológica en colores">
@@ -450,17 +516,19 @@
         <div class="row"><div class="dim">SB#3 eco · 24×33×11,5 cm</div><div class="pr">$12.00<small>docena</small></div></div>
         <div class="row"><div class="dim">SB#4 eco · 29×36×12 cm</div><div class="pr">$15.00<small>docena</small></div></div>
       </div>
+      <div class="screen-cta">
+        <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20ecol%C3%B3gicas%20de%20cartulina." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+      </div>
     </div>
-  </details>
+  </div>
 
-  <!-- CAJAS DE CARTÓN -->
-  <details class="cat" id="cat-cajas">
-    <summary>
-      <div class="icon">📦</div>
-      <div class="titles">Cajas de Cartón<small>Micro corrugado · 13 tipos</small></div>
-      <span class="chev">▾</span>
-    </summary>
-    <div class="cat-body">
+  <!-- ============ SCREEN: CAJAS ============ -->
+  <div id="screen-cajas" class="screen" hidden>
+    <div class="screen-head">
+      <button class="back-btn" onclick="showHome()">← Volver</button>
+      <div class="stitle"><b>📦 Cajas de Cartón</b><small>Micro corrugado · 13 tipos</small></div>
+    </div>
+    <div class="screen-body">
 
       <div class="subhead"><img src="assets/products/caja-regalo.jpg" alt="Cajas regalo">Cajas Regalo</div>
       <div class="rows">
@@ -531,38 +599,27 @@
         <div class="row"><div class="dim">B34 · plancha 150×120 cm, 2mm</div><div class="pr">$3.50<small>c/u</small></div></div>
       </div>
 
-      <p class="disclaimer" style="padding:10px 0 0;">Precio mostrado por docena. Todas por ciento y a partir de 300 unidades — consultar precio.</p>
+      <p class="disclaimer">Precio mostrado por docena. Todas por ciento y a partir de 300 unidades — consultar precio.</p>
+      <div class="screen-cta">
+        <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20cajas%20de%20cart%C3%B3n." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a>
+      </div>
     </div>
-  </details>
-
-  <div class="pay">
-    <span class="emoji">💳</span>
-    <span>Aceptamos todas las tarjetas de crédito y débito (Visa, Mastercard, Diners Club, PacifiCard, Discover).</span>
   </div>
-
-  <footer>
-    <div class="leaf">🌿</div>
-    <h3>Sofi Graf</h3>
-    <p>Fabricantes de Bolsas de Papel y Cajas</p>
-    <div class="contact-list">
-      <div class="contact-row">📍 Venezuela N17-54 y Bogotá, Quito</div>
-      <div class="contact-row">👤 Kleber Palomeque</div>
-      <div class="contact-row">📞 <a href="tel:+59322555684">022 555 684</a></div>
-      <div class="contact-row">💬 <a href="https://wa.me/593979707152" target="_blank" rel="noopener">0979 707 152</a></div>
-      <div class="contact-row">✉️ <a href="mailto:sofigraf41@gmail.com">sofigraf41@gmail.com</a></div>
-    </div>
-    <p class="badge">Menú digital · actualizado agosto 2024</p>
-  </footer>
 
 </div>
 <script>
-  document.querySelectorAll('#catnav a').forEach(function(a){
-    a.addEventListener('click', function(){
-      var id = a.getAttribute('href').slice(1);
-      var det = document.getElementById(id);
-      if(det){ det.open = true; }
-    });
-  });
+  function showScreen(id){
+    document.getElementById('home').hidden = true;
+    document.querySelectorAll('.screen').forEach(function(s){ s.hidden = true; });
+    document.getElementById(id).hidden = false;
+    document.querySelector('.page').scrollTop = 0;
+    window.scrollTo(0,0);
+  }
+  function showHome(){
+    document.querySelectorAll('.screen').forEach(function(s){ s.hidden = true; });
+    document.getElementById('home').hidden = false;
+    window.scrollTo(0,0);
+  }
 </script>
 </body>
 </html>
