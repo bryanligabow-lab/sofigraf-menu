@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Sofi Graf | Menú Digital</title>
+<meta name="description" content="Sofi Graf — Fabricantes de bolsas de papel y cajas. Catálogo digital de fundas kraft con y sin ventana.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
+<style>
+  :root{
+    --green:#7CB342;
+    --green-light:#9CCC57;
+    --green-dark:#1E7A34;
+    --navy:#232B3B;
+    --brown:#8B5A2B;
+    --cream:#FBF8F1;
+    --card:#ffffff;
+    --ink:#232B3B;
+    --muted:#6b7280;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    display:flex;
+    justify-content:center;
+  }
+  .page{
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    background:var(--cream);
+    box-shadow:0 0 40px rgba(0,0,0,0.06);
+    position:relative;
+  }
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(160deg,#2b3245 0%, var(--navy) 60%, #1a1f2b 100%);
+    padding:36px 24px 28px;
+    text-align:center;
+    border-bottom:6px solid var(--green);
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    width:260px;height:260px;
+    background:radial-gradient(circle, rgba(124,179,66,0.25) 0%, rgba(124,179,66,0) 70%);
+    top:-80px; right:-80px;
+  }
+  .hero img{
+    width:min(78%,300px);
+    height:auto;
+    display:block;
+    margin:0 auto 10px;
+    filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+  }
+  .hero p.tag{
+    color:#e8ecef;
+    font-size:13px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    margin:6px 0 0;
+    font-weight:600;
+  }
+  .hero p.sub{
+    color:var(--green-light);
+    font-size:12px;
+    margin:4px 0 0;
+    letter-spacing:0.03em;
+  }
+
+  /* CTA */
+  .cta-row{
+    display:flex;
+    gap:10px;
+    padding:16px 20px 4px;
+  }
+  .btn{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    text-decoration:none;
+    padding:13px 10px;
+    border-radius:12px;
+    font-weight:700;
+    font-size:14px;
+    text-align:center;
+    transition:transform .15s ease;
+  }
+  .btn:active{ transform:scale(0.97); }
+  .btn-primary{
+    background:#25D366;
+    color:#fff;
+    box-shadow:0 6px 14px rgba(37,211,102,0.35);
+  }
+  .btn-secondary{
+    background:var(--card);
+    color:var(--navy);
+    border:1.5px solid #e5e2da;
+  }
+
+  /* SECTION TITLES */
+  .section{
+    padding:22px 20px 4px;
+  }
+  .section h2{
+    font-size:15px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--green-dark);
+    margin:0 0 4px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .section h2::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:linear-gradient(90deg, rgba(30,122,52,0.35), transparent);
+  }
+  .section p.note{
+    font-size:12px;
+    color:var(--muted);
+    margin:2px 0 12px;
+  }
+
+  /* PRODUCT CARDS */
+  .menu-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding:0 20px 6px;
+  }
+  .item{
+    background:var(--card);
+    border-radius:14px;
+    padding:14px 16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    border:1px solid #efece3;
+    box-shadow:0 2px 6px rgba(35,43,59,0.04);
+  }
+  .item .left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .bagicon{
+    width:34px;height:34px;
+    flex:0 0 auto;
+    border-radius:9px;
+    background:linear-gradient(160deg, var(--green-light), var(--green));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+  }
+  .item .name{
+    font-weight:700;
+    font-size:14.5px;
+    color:var(--ink);
+    line-height:1.25;
+  }
+  .item .dims{
+    font-size:12px;
+    color:var(--muted);
+  }
+  .item .price{
+    font-weight:800;
+    font-size:15px;
+    color:var(--green-dark);
+    white-space:nowrap;
+  }
+  .item .price small{
+    display:block;
+    font-weight:500;
+    font-size:10px;
+    color:var(--muted);
+    text-align:right;
+  }
+
+  .disclaimer{
+    padding:14px 24px 4px;
+    font-size:11.5px;
+    color:var(--muted);
+    line-height:1.5;
+  }
+
+  /* PAYMENT */
+  .pay{
+    margin:20px 20px 0;
+    background:#fff;
+    border:1px solid #efece3;
+    border-radius:14px;
+    padding:14px 16px;
+    font-size:12.5px;
+    color:var(--ink);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .pay span.emoji{font-size:18px;}
+
+  /* FOOTER */
+  footer{
+    margin-top:26px;
+    background:var(--navy);
+    color:#e8ecef;
+    padding:26px 24px 30px;
+    text-align:center;
+    border-radius:24px 24px 0 0;
+  }
+  footer .leaf{ font-size:22px; margin-bottom:6px; }
+  footer h3{
+    margin:0 0 4px;
+    font-size:16px;
+    color:var(--green-light);
+  }
+  footer p{
+    margin:2px 0;
+    font-size:13px;
+    color:#cfd4da;
+  }
+  footer a{
+    color:#e8ecef;
+    text-decoration:none;
+  }
+  .contact-list{
+    margin-top:14px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    align-items:center;
+  }
+  .contact-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:13px;
+  }
+  .badge{
+    margin-top:18px;
+    font-size:10.5px;
+    color:#8a93a3;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <img src="assets/logo.png" alt="Sofi Graf">
+    <p class="tag">Fabricantes de Bolsas de Papel y Cajas</p>
+    <p class="sub">🍃 Empaque eco-friendly · Quito, Ecuador</p>
+  </div>
+
+  <div class="cta-row">
+    <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20de%20papel." target="_blank" rel="noopener">
+      💬 WhatsApp
+    </a>
+    <a class="btn btn-secondary" href="tel:+59322555684">
+      📞 Llamar
+    </a>
+  </div>
+
+  <div class="section">
+    <h2>Fundas sin ventana</h2>
+    <p class="note">Precio por 100 unidades (USD)</p>
+  </div>
+  <div class="menu-list">
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🛍️</div>
+        <div>
+          <div class="name">9 × 14 cm</div>
+          <div class="dims">Kraft, sin ventana</div>
+        </div>
+      </div>
+      <div class="price">$22.64<small>/100u</small></div>
+    </div>
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🛍️</div>
+        <div>
+          <div class="name">17 × 24 cm</div>
+          <div class="dims">Kraft, sin ventana</div>
+        </div>
+      </div>
+      <div class="price">$57.14<small>/100u</small></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Fundas con ventana</h2>
+    <p class="note">Precio por 100 unidades (USD)</p>
+  </div>
+  <div class="menu-list">
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🪟</div>
+        <div>
+          <div class="name">10 × 15 cm</div>
+          <div class="dims">Kraft, con ventana</div>
+        </div>
+      </div>
+      <div class="price">$28.78<small>/100u</small></div>
+    </div>
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🪟</div>
+        <div>
+          <div class="name">10 × 18 cm</div>
+          <div class="dims">Kraft, con ventana</div>
+        </div>
+      </div>
+      <div class="price">$34.28<small>/100u</small></div>
+    </div>
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🪟</div>
+        <div>
+          <div class="name">14 × 22 cm</div>
+          <div class="dims">Kraft, con ventana</div>
+        </div>
+      </div>
+      <div class="price">$42.86<small>/100u</small></div>
+    </div>
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🪟</div>
+        <div>
+          <div class="name">16 × 26 cm</div>
+          <div class="dims">Kraft, con ventana</div>
+        </div>
+      </div>
+      <div class="price">$51.42<small>/100u</small></div>
+    </div>
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🪟</div>
+        <div>
+          <div class="name">20 × 30 cm</div>
+          <div class="dims">Kraft, con ventana</div>
+        </div>
+      </div>
+      <div class="price">$71.42<small>/100u</small></div>
+    </div>
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🪟</div>
+        <div>
+          <div class="name">25 × 35 cm</div>
+          <div class="dims">Kraft, con ventana</div>
+        </div>
+      </div>
+      <div class="price">$84.00<small>/100u</small></div>
+    </div>
+    <div class="item">
+      <div class="left">
+        <div class="bagicon">🪟</div>
+        <div>
+          <div class="name">30 × 40 cm</div>
+          <div class="dims">Kraft, con ventana</div>
+        </div>
+      </div>
+      <div class="price">$98.00<small>/100u</small></div>
+    </div>
+  </div>
+
+  <p class="disclaimer">* Precios referenciales, sujetos a confirmación. Consulta descuentos por volumen, personalización con tu marca/logo y otras medidas disponibles.</p>
+
+  <div class="pay">
+    <span class="emoji">💳</span>
+    <span>Aceptamos todas las tarjetas de crédito y débito (Visa, Mastercard, Diners Club, PacifiCard, Discover).</span>
+  </div>
+
+  <footer>
+    <div class="leaf">🌿</div>
+    <h3>Sofi Graf</h3>
+    <p>Fabricantes de Bolsas de Papel y Cajas</p>
+    <div class="contact-list">
+      <div class="contact-row">📍 Venezuela N17-54 y Bogotá, Quito</div>
+      <div class="contact-row">👤 Kleber Palomeque</div>
+      <div class="contact-row">📞 <a href="tel:+59322555684">022 555 684</a></div>
+      <div class="contact-row">💬 <a href="https://wa.me/593979707152" target="_blank" rel="noopener">0979 707 152</a></div>
+      <div class="contact-row">✉️ <a href="mailto:sofigraf41@gmail.com">sofigraf41@gmail.com</a></div>
+    </div>
+    <p class="badge">Menú digital · actualizado agosto 2024</p>
+  </footer>
+
+</div>
+</body>
+</html>
