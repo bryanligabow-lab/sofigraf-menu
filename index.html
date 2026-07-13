@@ -136,37 +136,59 @@
     aspect-ratio:1/1;
     border-radius:22px;
     border:none;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    text-align:center;
-    padding:14px;
+    position:relative;
+    overflow:hidden;
+    padding:0;
     cursor:pointer;
-    box-shadow:0 6px 16px rgba(35,43,59,0.10);
+    box-shadow:0 6px 16px rgba(35,43,59,0.18);
     transition:transform .15s ease;
     font-family:inherit;
+    background:var(--navy);
   }
   .grid-btn:active{ transform:scale(0.95); }
-  .grid-btn .emoji{
-    font-size:40px;
-    line-height:1;
+  .grid-btn .bgphoto{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .grid-btn .overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(20,24,32,0.05) 35%, rgba(15,18,24,0.92) 100%);
+  }
+  .grid-btn .chip{
+    position:absolute;
+    top:12px; left:12px;
+    width:36px; height:36px;
+    border-radius:10px;
+    background:rgba(255,255,255,0.92);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+  }
+  .grid-btn .text{
+    position:absolute;
+    left:14px; right:14px; bottom:13px;
+    text-align:left;
   }
   .grid-btn .label{
+    display:block;
     font-weight:800;
-    font-size:14px;
+    font-size:15px;
     color:#fff;
+    line-height:1.2;
   }
   .grid-btn .sub{
-    font-size:10.5px;
+    display:block;
+    font-size:11px;
     color:rgba(255,255,255,0.85);
     font-weight:600;
+    margin-top:2px;
   }
-  .grid-btn.b1{ background:linear-gradient(150deg,#5b6579,var(--navy)); }
-  .grid-btn.b2{ background:linear-gradient(150deg,#a9793f,var(--brown)); }
-  .grid-btn.b3{ background:linear-gradient(150deg,var(--green-light),var(--green-dark)); }
-  .grid-btn.b4{ background:linear-gradient(150deg,#8a6a4a,#5c4326); }
 
   /* SCREENS (app-like views) */
   .screen{
@@ -376,25 +398,41 @@
     </div>
 
     <div class="grid-menu">
-      <button class="grid-btn b1" onclick="showScreen('screen-ventana')">
-        <span class="emoji">🪟</span>
-        <span class="label">Con ventana</span>
-        <span class="sub">9 medidas</span>
+      <button class="grid-btn" onclick="showScreen('screen-ventana')">
+        <img class="bgphoto" src="assets/products/tile-ventana.jpg" alt="Fundas con ventana">
+        <div class="overlay"></div>
+        <div class="chip">🪟</div>
+        <div class="text">
+          <span class="label">Con ventana</span>
+          <span class="sub">9 medidas</span>
+        </div>
       </button>
-      <button class="grid-btn b2" onclick="showScreen('screen-kraft')">
-        <span class="emoji">👜</span>
-        <span class="label">Kraft</span>
-        <span class="sub">29 medidas</span>
+      <button class="grid-btn" onclick="showScreen('screen-kraft')">
+        <img class="bgphoto" src="assets/products/kraft-2.jpg" alt="Fundas kraft con manija">
+        <div class="overlay"></div>
+        <div class="chip">👜</div>
+        <div class="text">
+          <span class="label">Kraft</span>
+          <span class="sub">29 medidas</span>
+        </div>
       </button>
-      <button class="grid-btn b3" onclick="showScreen('screen-eco')">
-        <span class="emoji">🌿</span>
-        <span class="label">Ecológicas</span>
-        <span class="sub">Cartulina</span>
+      <button class="grid-btn" onclick="showScreen('screen-eco')">
+        <img class="bgphoto" src="assets/products/eco-1.jpg" alt="Fundas ecológicas de cartulina">
+        <div class="overlay"></div>
+        <div class="chip">🌿</div>
+        <div class="text">
+          <span class="label">Ecológicas</span>
+          <span class="sub">Cartulina</span>
+        </div>
       </button>
-      <button class="grid-btn b4" onclick="showScreen('screen-cajas')">
-        <span class="emoji">📦</span>
-        <span class="label">Cajas</span>
-        <span class="sub">13 tipos</span>
+      <button class="grid-btn" onclick="showScreen('screen-cajas')">
+        <img class="bgphoto" src="assets/products/caja-regalo.jpg" alt="Cajas de cartón">
+        <div class="overlay"></div>
+        <div class="chip">📦</div>
+        <div class="text">
+          <span class="label">Cajas</span>
+          <span class="sub">13 tipos</span>
+        </div>
       </button>
     </div>
 
