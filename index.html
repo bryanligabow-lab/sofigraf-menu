@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <title>Sofi Graf | Menú Digital</title>
-<meta name="description" content="Sofi Graf — Fabricantes de bolsas de papel y cajas. Catálogo digital de fundas kraft con y sin ventana.">
+<meta name="description" content="Sofi Graf — Fabricantes de bolsas de papel y cajas. Catálogo digital por tipo de funda y caja.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 <style>
   :root{
@@ -106,6 +106,28 @@
     border:1.5px solid #e5e2da;
   }
 
+  /* CATEGORY QUICK NAV */
+  .catnav{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    padding:16px 20px 4px;
+    scrollbar-width:none;
+  }
+  .catnav::-webkit-scrollbar{display:none;}
+  .catnav a{
+    flex:0 0 auto;
+    background:#fff;
+    border:1.5px solid #e5e2da;
+    color:var(--ink);
+    text-decoration:none;
+    font-size:12.5px;
+    font-weight:700;
+    padding:9px 14px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+
   /* SECTION TITLES */
   .section{
     padding:22px 20px 4px;
@@ -132,61 +154,111 @@
     margin:2px 0 12px;
   }
 
-  /* PRODUCT CARDS */
-  .menu-list{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    padding:0 20px 6px;
-  }
-  .item{
+  /* ACCORDION CATEGORY BUTTONS */
+  .cat{
     background:var(--card);
-    border-radius:14px;
+    border:1px solid #efece3;
+    border-radius:16px;
+    margin:0 20px 12px;
+    overflow:hidden;
+    box-shadow:0 2px 6px rgba(35,43,59,0.04);
+  }
+  .cat summary{
+    list-style:none;
+    cursor:pointer;
     padding:14px 16px;
     display:flex;
     align-items:center;
-    justify-content:space-between;
     gap:12px;
-    border:1px solid #efece3;
-    box-shadow:0 2px 6px rgba(35,43,59,0.04);
+    font-weight:800;
+    font-size:15px;
+    color:var(--ink);
   }
-  .item .left{
-    display:flex;
-    align-items:center;
-    gap:12px;
-  }
-  .bagicon{
+  .cat summary::-webkit-details-marker{ display:none; }
+  .cat summary .icon{
     width:34px;height:34px;
-    flex:0 0 auto;
     border-radius:9px;
     background:linear-gradient(160deg, var(--green-light), var(--green));
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:16px;
+    flex:0 0 auto;
   }
-  .item .name{
-    font-weight:700;
-    font-size:14.5px;
-    color:var(--ink);
-    line-height:1.25;
-  }
-  .item .dims{
-    font-size:12px;
+  .cat summary .titles{ display:flex; flex-direction:column; line-height:1.2; }
+  .cat summary .titles small{ font-weight:500; font-size:11px; color:var(--muted); }
+  .cat summary .chev{
+    margin-left:auto;
+    transition:transform .2s ease;
     color:var(--muted);
+    flex:0 0 auto;
   }
-  .item .price{
+  .cat[open] summary .chev{ transform:rotate(180deg); }
+  .cat[open] summary{ border-bottom:1px solid #efece3; }
+  .cat-body{ padding:14px 16px 16px; }
+
+  .gallery{
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+    margin:0 0 14px;
+    padding-bottom:2px;
+    scrollbar-width:none;
+  }
+  .gallery::-webkit-scrollbar{display:none;}
+  .gallery img{
+    height:120px;
+    width:auto;
+    border-radius:10px;
+    object-fit:cover;
+    flex:0 0 auto;
+    box-shadow:0 2px 8px rgba(0,0,0,0.12);
+  }
+
+  .subhead{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin:16px 0 6px;
+    font-size:12px;
     font-weight:800;
-    font-size:15px;
-    color:var(--green-dark);
-    white-space:nowrap;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    color:var(--brown);
   }
-  .item .price small{
+  .subhead:first-of-type{ margin-top:0; }
+  .subhead img{
+    width:36px;height:36px;
+    border-radius:8px;
+    object-fit:cover;
+    flex:0 0 auto;
+  }
+
+  .rows{ display:flex; flex-direction:column; gap:6px; }
+  .row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+    padding:9px 11px;
+    background:var(--cream);
+    border-radius:9px;
+    font-size:12.5px;
+  }
+  .row .dim{ font-weight:700; color:var(--ink); }
+  .row .tag2{ display:block; font-weight:500; color:var(--muted); font-size:11px; }
+  .row .pr{
+    font-weight:800;
+    color:var(--green-dark);
+    font-size:12.5px;
+    white-space:nowrap;
+    text-align:right;
+  }
+  .row .pr small{
     display:block;
     font-weight:500;
-    font-size:10px;
     color:var(--muted);
-    text-align:right;
+    font-size:10px;
   }
 
   .disclaimer{
@@ -273,111 +345,195 @@
     </a>
   </div>
 
-  <div class="section">
-    <h2>Fundas sin ventana</h2>
-    <p class="note">Precio por 100 unidades (USD)</p>
-  </div>
-  <div class="menu-list">
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🛍️</div>
-        <div>
-          <div class="name">9 × 14 cm</div>
-          <div class="dims">Kraft, sin ventana</div>
-        </div>
-      </div>
-      <div class="price">$22.64<small>/100u</small></div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🛍️</div>
-        <div>
-          <div class="name">17 × 24 cm</div>
-          <div class="dims">Kraft, sin ventana</div>
-        </div>
-      </div>
-      <div class="price">$57.14<small>/100u</small></div>
-    </div>
+  <div class="catnav" id="catnav">
+    <a href="#cat-ventana">🪟 Con ventana</a>
+    <a href="#cat-kraft">👜 Kraft</a>
+    <a href="#cat-eco">🌿 Ecológicas</a>
+    <a href="#cat-cajas">📦 Cajas</a>
   </div>
 
   <div class="section">
-    <h2>Fundas con ventana</h2>
-    <p class="note">Precio por 100 unidades (USD)</p>
-  </div>
-  <div class="menu-list">
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🪟</div>
-        <div>
-          <div class="name">10 × 15 cm</div>
-          <div class="dims">Kraft, con ventana</div>
-        </div>
-      </div>
-      <div class="price">$28.78<small>/100u</small></div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🪟</div>
-        <div>
-          <div class="name">10 × 18 cm</div>
-          <div class="dims">Kraft, con ventana</div>
-        </div>
-      </div>
-      <div class="price">$34.28<small>/100u</small></div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🪟</div>
-        <div>
-          <div class="name">14 × 22 cm</div>
-          <div class="dims">Kraft, con ventana</div>
-        </div>
-      </div>
-      <div class="price">$42.86<small>/100u</small></div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🪟</div>
-        <div>
-          <div class="name">16 × 26 cm</div>
-          <div class="dims">Kraft, con ventana</div>
-        </div>
-      </div>
-      <div class="price">$51.42<small>/100u</small></div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🪟</div>
-        <div>
-          <div class="name">20 × 30 cm</div>
-          <div class="dims">Kraft, con ventana</div>
-        </div>
-      </div>
-      <div class="price">$71.42<small>/100u</small></div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🪟</div>
-        <div>
-          <div class="name">25 × 35 cm</div>
-          <div class="dims">Kraft, con ventana</div>
-        </div>
-      </div>
-      <div class="price">$84.00<small>/100u</small></div>
-    </div>
-    <div class="item">
-      <div class="left">
-        <div class="bagicon">🪟</div>
-        <div>
-          <div class="name">30 × 40 cm</div>
-          <div class="dims">Kraft, con ventana</div>
-        </div>
-      </div>
-      <div class="price">$98.00<small>/100u</small></div>
-    </div>
+    <h2>Elige el tipo de funda o caja</h2>
+    <p class="note">Toca cada categoría para ver fotos, medidas y precios</p>
   </div>
 
-  <p class="disclaimer">* Precios referenciales, sujetos a confirmación. Consulta descuentos por volumen, personalización con tu marca/logo y otras medidas disponibles.</p>
+  <!-- CON VENTANA -->
+  <details class="cat" id="cat-ventana">
+    <summary>
+      <div class="icon">🪟</div>
+      <div class="titles">Fundas con / sin ventana<small>9 medidas · precio por 100 uds</small></div>
+      <span class="chev">▾</span>
+    </summary>
+    <div class="cat-body">
+      <div class="subhead">Sin ventana</div>
+      <div class="rows">
+        <div class="row"><div class="dim">9 × 14 cm</div><div class="pr">$22.64<small>/100u</small></div></div>
+        <div class="row"><div class="dim">17 × 24 cm</div><div class="pr">$57.14<small>/100u</small></div></div>
+      </div>
+      <div class="subhead">Con ventana</div>
+      <div class="rows">
+        <div class="row"><div class="dim">10 × 15 cm</div><div class="pr">$28.78<small>/100u</small></div></div>
+        <div class="row"><div class="dim">10 × 18 cm</div><div class="pr">$34.28<small>/100u</small></div></div>
+        <div class="row"><div class="dim">14 × 22 cm</div><div class="pr">$42.86<small>/100u</small></div></div>
+        <div class="row"><div class="dim">16 × 26 cm</div><div class="pr">$51.42<small>/100u</small></div></div>
+        <div class="row"><div class="dim">20 × 30 cm</div><div class="pr">$71.42<small>/100u</small></div></div>
+        <div class="row"><div class="dim">25 × 35 cm</div><div class="pr">$84.00<small>/100u</small></div></div>
+        <div class="row"><div class="dim">30 × 40 cm</div><div class="pr">$98.00<small>/100u</small></div></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- FUNDAS KRAFT CON MANIJA -->
+  <details class="cat" id="cat-kraft">
+    <summary>
+      <div class="icon">👜</div>
+      <div class="titles">Fundas Kraft con manija<small>29 medidas · líneas C, SB y CX</small></div>
+      <span class="chev">▾</span>
+    </summary>
+    <div class="cat-body">
+      <div class="gallery">
+        <img src="assets/products/kraft-1.jpg" alt="Funda kraft con manija de cordón">
+        <img src="assets/products/kraft-2.jpg" alt="Funda kraft grande Sofi Graf">
+      </div>
+      <div class="rows">
+        <div class="row"><div class="dim">C-1 · 10×11×6 cm</div><div class="pr">$2.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-13 · 16×9×6 cm</div><div class="pr">$2.30<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-14 · 21×10×6 cm</div><div class="pr">$2.50<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-5 · 21×10×8 cm</div><div class="pr">$3.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-16 · 20×20×5 cm</div><div class="pr">$3.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-18 · 15×14×10 cm</div><div class="pr">$3.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#1 · 12×16×8 cm</div><div class="pr">$3.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-2 · 27×14,5×7 cm</div><div class="pr">$3.50<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-6 · 26×12×10 cm</div><div class="pr">$3.50<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-7 · 25×15×13 cm</div><div class="pr">$4.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-17 · 25×20×10 cm</div><div class="pr">$4.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-19 · 27×30×9 cm</div><div class="pr">$4.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-3 · 38×21,5×10 cm</div><div class="pr">$5.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-10 · 36×11×10 cm</div><div class="pr">$5.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#2 · 20×25×12 cm</div><div class="pr">$5.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-8 · 27×24×15 cm</div><div class="pr">$5.50<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-9 · 37×28×15 cm</div><div class="pr">$7.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-12 · 40×22×15 cm</div><div class="pr">$7.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-15 · 40×30×10 cm</div><div class="pr">$7.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#3 · 24×33×11,5 cm</div><div class="pr">$7.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-20 · 36×44×16 cm</div><div class="pr">$7.50<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-11 · 40×25×22 cm</div><div class="pr">$8.50<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#4 · 29×36×12 cm</div><div class="pr">$8.80<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-4 · 50×28×16 cm</div><div class="pr">$10.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">CX-01 · 32×30×12,5 cm</div><div class="pr">$10.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">CX-03 · 29×36×14 cm</div><div class="pr">$10.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">CX-02 · 33×42×14 cm</div><div class="pr">$12.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#5 · 40×45×16 cm</div><div class="pr">$16.50<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#6 · 50×50×18 cm</div><div class="pr">$21.00<small>docena</small></div></div>
+      </div>
+      <p class="disclaimer" style="padding:10px 0 0;">Precio mostrado por docena. También disponible por ciento, y desde 100 hasta 1000 unidades con impresión a un color — consulta por WhatsApp.</p>
+    </div>
+  </details>
+
+  <!-- ECOLÓGICAS -->
+  <details class="cat" id="cat-eco">
+    <summary>
+      <div class="icon">🌿</div>
+      <div class="titles">Fundas Ecológicas (Cartulina)<small>Papel de caña de azúcar, 150 g</small></div>
+      <span class="chev">▾</span>
+    </summary>
+    <div class="cat-body">
+      <div class="gallery">
+        <img src="assets/products/eco-1.jpg" alt="Funda de cartulina ecológica natural">
+        <img src="assets/products/eco-2.jpg" alt="Funda de cartulina ecológica en colores">
+      </div>
+      <div class="rows">
+        <div class="row"><div class="dim">SB#1 eco · 12×16×8 cm</div><div class="pr">$4.20<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-17 bristol · 25×20×10 cm</div><div class="pr">$7.80<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#2 eco · 20×25×12 cm</div><div class="pr">$8.40<small>docena</small></div></div>
+        <div class="row"><div class="dim">C-17 color (rojo/negro) · 25×20×10 cm</div><div class="pr">$10.80<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#3 eco · 24×33×11,5 cm</div><div class="pr">$12.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">SB#4 eco · 29×36×12 cm</div><div class="pr">$15.00<small>docena</small></div></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- CAJAS DE CARTÓN -->
+  <details class="cat" id="cat-cajas">
+    <summary>
+      <div class="icon">📦</div>
+      <div class="titles">Cajas de Cartón<small>Micro corrugado · 13 tipos</small></div>
+      <span class="chev">▾</span>
+    </summary>
+    <div class="cat-body">
+
+      <div class="subhead"><img src="assets/products/caja-regalo.jpg" alt="Cajas regalo">Cajas Regalo</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B7 · 10×15×15 cm</div><div class="pr">$7.20<small>docena</small></div></div>
+        <div class="row"><div class="dim">B8 · 15×15×15 cm</div><div class="pr">$9.60<small>docena</small></div></div>
+        <div class="row"><div class="dim">B10 · 15×20×20 cm</div><div class="pr">$16.60<small>docena</small></div></div>
+        <div class="row"><div class="dim">B9 · 20×20×20 cm</div><div class="pr">$18.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B11 · 25×25×25 cm</div><div class="pr">$30.00<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead">🥡 Tipo Lonchera</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B1 · 14×20×12 cm</div><div class="pr">$7.20<small>docena</small></div></div>
+        <div class="row"><div class="dim">B3 · 13,5×26×20 cm</div><div class="pr">$15.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B2 · 22×22×16 cm</div><div class="pr">$15.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B26 · 36×34×23 cm (grande)</div><div class="pr">$30.00<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead"><img src="assets/products/caja-sixpack.jpg" alt="Six pack cervecero">Six Pack Cervecero</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B5 · 16×20×13,5 cm (330 ml)</div><div class="pr">$12.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B4 · 23×18×12 cm (350 ml)</div><div class="pr">$12.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B6 · 36×15×7,5 cm (para vinos)</div><div class="pr">$12.00<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead"><img src="assets/products/caja-pizza.jpg" alt="Caja para pizza">Caja Pizza</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B12 · 22×22 cm</div><div class="pr">$3.60<small>docena</small></div></div>
+        <div class="row"><div class="dim">B13 · 26×26 cm</div><div class="pr">$4.80<small>docena</small></div></div>
+        <div class="row"><div class="dim">B14 · 31,5×31,5 cm</div><div class="pr">$7.20<small>docena</small></div></div>
+        <div class="row"><div class="dim">B15 · 38×38 cm</div><div class="pr">$10.32<small>docena</small></div></div>
+        <div class="row"><div class="dim">B16 · 42×42 cm</div><div class="pr">$10.80<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead">🍔 Caja Hamburguesas</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B17 · 8×25×20 cm</div><div class="pr">$12.00<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead"><img src="assets/products/caja-envios.jpg" alt="Caja para envíos">Caja para Envíos</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B29 · 6×17×12 cm</div><div class="pr">$7.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B31 · 6,5×23×9 cm</div><div class="pr">$7.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B19 · 6×23×17 cm</div><div class="pr">$12.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B18 · 6×22×22 cm</div><div class="pr">$15.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B20 · 8×25,5×20,5 cm</div><div class="pr">$18.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B22 · 10,5×31×21 cm</div><div class="pr">$24.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B21 · 10,5×32×25 cm</div><div class="pr">$30.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B23 · 11×33×22 cm</div><div class="pr">$30.00<small>docena</small></div></div>
+        <div class="row"><div class="dim">B24 · 11×38×28 cm</div><div class="pr">$36.00<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead">🎩 Caja para Sombreros</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B25 · 15×35×35 cm</div><div class="pr">$30.00<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead">🥤 Porta Vasos x2 / 🍳 Bandeja Desayuno</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B27 · 15×18×9 cm</div><div class="pr">$4.80<small>docena</small></div></div>
+        <div class="row"><div class="dim">B28 · 6×30×25 cm</div><div class="pr">$9.00<small>docena</small></div></div>
+      </div>
+
+      <div class="subhead">🧰 Multiusos / 🏺 Jarro / 📄 Plancha</div>
+      <div class="rows">
+        <div class="row"><div class="dim">B32 · 7×12×8 cm (multiusos)</div><div class="pr">$5.40<small>docena</small></div></div>
+        <div class="row"><div class="dim">B33 · 10×10×9 cm (jarro)</div><div class="pr">$5.40<small>docena</small></div></div>
+        <div class="row"><div class="dim">B34 · plancha 150×120 cm, 2mm</div><div class="pr">$3.50<small>c/u</small></div></div>
+      </div>
+
+      <p class="disclaimer" style="padding:10px 0 0;">Precio mostrado por docena. Todas por ciento y a partir de 300 unidades — consultar precio.</p>
+    </div>
+  </details>
 
   <div class="pay">
     <span class="emoji">💳</span>
@@ -399,5 +555,14 @@
   </footer>
 
 </div>
+<script>
+  document.querySelectorAll('#catnav a').forEach(function(a){
+    a.addEventListener('click', function(){
+      var id = a.getAttribute('href').slice(1);
+      var det = document.getElementById(id);
+      if(det){ det.open = true; }
+    });
+  });
+</script>
 </body>
 </html>
