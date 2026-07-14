@@ -4,143 +4,123 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <title>Sofi Graf | Menú Digital</title>
-<meta name="description" content="Sofi Graf — Fabricantes de bolsas de papel y cajas. Catálogo digital con fotos, medidas y precios.">
+<meta name="description" content="Sofi Graf — Fabricantes de bolsas de papel y cajas. Catálogo digital con carrito de pre-pedido por WhatsApp.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌿</text></svg>">
 <style>
-  :root{
-    --green:#7CB342; --green-light:#9CCC57; --green-dark:#1E7A34;
-    --navy:#232B3B; --brown:#8B5A2B; --cream:#FBF8F1;
-    --card:#ffffff; --ink:#232B3B; --muted:#6b7280; --line:#ece8de;
-  }
+  :root{--green:#7CB342;--green-light:#9CCC57;--green-dark:#1E7A34;--navy:#232B3B;--brown:#8B5A2B;--cream:#FBF8F1;--card:#fff;--ink:#232B3B;--muted:#6b7280;--line:#ece8de;}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
-  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    background:var(--cream); color:var(--ink); display:flex; justify-content:center;}
-  .page{width:100%; max-width:480px; min-height:100vh; background:var(--cream);
-    box-shadow:0 0 40px rgba(0,0,0,0.06); position:relative; overflow:hidden;}
-
-  /* HERO */
-  .hero{background:linear-gradient(160deg,#2b3245 0%,var(--navy) 60%,#1a1f2b 100%);
-    padding:30px 24px 24px; text-align:center; border-bottom:6px solid var(--green);
-    position:relative; overflow:hidden;}
-  .hero::before{content:""; position:absolute; width:260px; height:260px;
-    background:radial-gradient(circle,rgba(124,179,66,0.25) 0%,rgba(124,179,66,0) 70%); top:-80px; right:-80px;}
-  .hero img{width:min(70%,250px); height:auto; display:block; margin:0 auto 8px;
-    filter:drop-shadow(0 4px 10px rgba(0,0,0,0.35));}
-  .hero .tag{color:#e8ecef; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; margin:6px 0 0; font-weight:600;}
-  .hero .sub{color:var(--green-light); font-size:11.5px; margin:4px 0 0;}
-
-  /* CTA */
-  .cta-row{display:flex; gap:10px; padding:16px 20px 4px;}
-  .btn{flex:1; display:flex; align-items:center; justify-content:center; gap:8px; text-decoration:none;
-    padding:14px 10px; border-radius:12px; font-weight:700; font-size:14px; transition:transform .15s ease;}
-  .btn:active{transform:scale(0.97);}
-  .btn-primary{background:#25D366; color:#fff; box-shadow:0 6px 14px rgba(37,211,102,0.35);}
-  .btn-secondary{background:var(--card); color:var(--navy); border:1.5px solid #e5e2da;}
-
-  /* HOME */
-  .home-title{padding:24px 20px 4px; text-align:center;}
-  .home-title h2{font-size:17px; margin:0 0 2px;}
-  .home-title p{font-size:12.5px; color:var(--muted); margin:0;}
-  .grid-menu{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding:18px 20px 8px;}
-  .grid-btn{aspect-ratio:1/1; border-radius:20px; border:none; position:relative; overflow:hidden;
-    padding:0; cursor:pointer; box-shadow:0 6px 16px rgba(35,43,59,0.18); transition:transform .15s ease;
-    font-family:inherit; background:var(--navy);}
-  .grid-btn:active{transform:scale(0.95);}
-  .grid-btn .bgphoto{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
-  .grid-btn .overlay{position:absolute; inset:0;
-    background:linear-gradient(180deg,rgba(20,24,32,0.05) 30%,rgba(15,18,24,0.94) 100%);}
-  .grid-btn .chip{position:absolute; top:11px; left:11px; width:36px; height:36px; border-radius:10px;
-    background:rgba(255,255,255,0.94); display:flex; align-items:center; justify-content:center;
-    font-size:18px; box-shadow:0 2px 6px rgba(0,0,0,0.2);}
-  .grid-btn .text{position:absolute; left:14px; right:14px; bottom:12px; text-align:left;}
-  .grid-btn .label{display:block; font-weight:800; font-size:16px; color:#fff; line-height:1.15;}
-  .grid-btn .sub{display:block; font-size:11px; color:rgba(255,255,255,0.9); font-weight:600; margin-top:3px;}
-
-  /* SCREENS */
-  .screen{background:var(--cream); min-height:100vh;}
-  .screen-head{position:sticky; top:0; z-index:5; background:var(--navy); color:#fff;
-    padding:14px 14px; display:flex; align-items:center; gap:10px; border-bottom:4px solid var(--green);}
-  .back-btn{background:rgba(255,255,255,0.14); border:none; color:#fff; font-weight:700; font-size:14px;
-    padding:10px 14px; border-radius:11px; cursor:pointer; flex:0 0 auto; font-family:inherit;}
-  .back-btn:active{transform:scale(0.96);}
-  .screen-head .stitle{display:flex; flex-direction:column; line-height:1.2;}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--cream);color:var(--ink);display:flex;justify-content:center;}
+  .page{width:100%;max-width:480px;min-height:100vh;background:var(--cream);box-shadow:0 0 40px rgba(0,0,0,.06);position:relative;overflow:hidden;}
+  .hero{background:linear-gradient(160deg,#2b3245 0%,var(--navy) 60%,#1a1f2b 100%);padding:30px 24px 24px;text-align:center;border-bottom:6px solid var(--green);position:relative;overflow:hidden;}
+  .hero::before{content:"";position:absolute;width:260px;height:260px;background:radial-gradient(circle,rgba(124,179,66,.25) 0%,rgba(124,179,66,0) 70%);top:-80px;right:-80px;}
+  .hero img{width:min(70%,250px);height:auto;display:block;margin:0 auto 8px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.35));}
+  .hero .tag{color:#e8ecef;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:6px 0 0;font-weight:600;}
+  .hero .sub{color:var(--green-light);font-size:11.5px;margin:4px 0 0;}
+  .cta-row{display:flex;gap:10px;padding:16px 20px 4px;}
+  .btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;padding:14px 10px;border-radius:12px;font-weight:700;font-size:14px;transition:transform .15s ease;border:none;font-family:inherit;cursor:pointer;}
+  .btn:active{transform:scale(.97);}
+  .btn-primary{background:#25D366;color:#fff;box-shadow:0 6px 14px rgba(37,211,102,.35);}
+  .btn-secondary{background:var(--card);color:var(--navy);border:1.5px solid #e5e2da;}
+  .home-title{padding:24px 20px 4px;text-align:center;}
+  .home-title h2{font-size:17px;margin:0 0 2px;}
+  .home-title p{font-size:12.5px;color:var(--muted);margin:0;}
+  .grid-menu{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:18px 20px 8px;}
+  .grid-btn{aspect-ratio:1/1;border-radius:20px;border:none;position:relative;overflow:hidden;padding:0;cursor:pointer;box-shadow:0 6px 16px rgba(35,43,59,.18);transition:transform .15s ease;font-family:inherit;background:var(--navy);}
+  .grid-btn:active{transform:scale(.95);}
+  .grid-btn .bgphoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+  .grid-btn .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,24,32,.05) 30%,rgba(15,18,24,.94) 100%);}
+  .grid-btn .chip{position:absolute;top:11px;left:11px;width:36px;height:36px;border-radius:10px;background:rgba(255,255,255,.94);display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 6px rgba(0,0,0,.2);}
+  .grid-btn .text{position:absolute;left:14px;right:14px;bottom:12px;text-align:left;}
+  .grid-btn .label{display:block;font-weight:800;font-size:16px;color:#fff;line-height:1.15;}
+  .grid-btn .sub{display:block;font-size:11px;color:rgba(255,255,255,.9);font-weight:600;margin-top:3px;}
+  .screen{background:var(--cream);min-height:100vh;}
+  .screen-head{position:sticky;top:0;z-index:5;background:var(--navy);color:#fff;padding:14px;display:flex;align-items:center;gap:10px;border-bottom:4px solid var(--green);}
+  .back-btn{background:rgba(255,255,255,.14);border:none;color:#fff;font-weight:700;font-size:16px;padding:10px 15px;border-radius:11px;cursor:pointer;flex:0 0 auto;font-family:inherit;}
+  .back-btn:active{transform:scale(.96);}
+  .screen-head .stitle{display:flex;flex-direction:column;line-height:1.2;}
   .screen-head .stitle b{font-size:15.5px;}
-  .screen-head .stitle small{font-size:11px; color:var(--green-light); font-weight:600; margin-top:1px;}
+  .screen-head .stitle small{font-size:11px;color:var(--green-light);font-weight:600;margin-top:1px;}
   .screen-body{padding:16px 16px 8px;}
-
-  .intro{font-size:12.5px; color:var(--muted); background:#fff; border:1px solid var(--line);
-    border-radius:12px; padding:11px 13px; margin:0 0 14px; line-height:1.5;}
+  .intro{font-size:12.5px;color:var(--muted);background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin:0 0 14px;line-height:1.5;}
   .intro b{color:var(--green-dark);}
-
-  .grouphd{display:flex; align-items:center; gap:9px; font-size:14px; font-weight:800;
-    color:var(--brown); margin:22px 2px 10px; padding-bottom:8px; border-bottom:2px solid var(--line);}
+  .intro .tapnote{display:block;margin-top:6px;color:var(--green-dark);font-weight:700;}
+  .grouphd{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:800;color:var(--brown);margin:22px 2px 10px;padding-bottom:8px;border-bottom:2px solid var(--line);}
   .grouphd:first-of-type{margin-top:4px;}
   .grouphd-ic{font-size:19px;}
-  .hint{font-size:11.5px; color:var(--muted); margin:0 2px 10px; line-height:1.5;}
-
-  /* PRODUCT CARD */
-  .pstack{display:flex; flex-direction:column; gap:12px;}
-  #screen-kraft .pstack,#screen-eco .pstack,#screen-ventana .pstack{gap:12px;}
-  .pcard{background:#fff; border:1px solid var(--line); border-radius:16px; padding:13px;
-    box-shadow:0 2px 8px rgba(35,43,59,0.05);}
-  .pcard-top{display:flex; align-items:center; gap:13px;}
-  .pthumb{width:68px; height:68px; border-radius:12px; object-fit:cover; flex:0 0 auto;
-    background:#f0eee7; border:1px solid var(--line);}
-  .pthumb-ph{display:flex; align-items:center; justify-content:center; font-size:28px;}
-  .pmeta{flex:1; min-width:0;}
-  .pcode{font-size:18px; font-weight:800; color:var(--green-dark); line-height:1.1;}
-  .pdims{font-size:13px; color:var(--ink); font-weight:600; margin-top:3px;}
-  .pdims-tag{display:block; font-size:11.5px; color:var(--muted); font-weight:500; margin-top:2px;}
-
-  /* base price (docena/ciento) */
-  .ptable{display:flex; gap:9px; margin-top:12px;}
-  .ptier{flex:1; background:var(--cream); border:1px solid var(--line); border-radius:11px;
-    padding:8px 10px; text-align:center;}
-  .pt-q{display:block; font-size:11px; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.03em;}
-  .pt-p{display:block; font-size:17px; font-weight:800; color:var(--ink); margin-top:2px;}
-
-  /* impresion grid */
-  .pprint-cap{font-size:11px; font-weight:700; color:var(--green-dark); text-transform:uppercase;
-    letter-spacing:0.04em; margin:13px 0 7px; display:flex; align-items:center; gap:6px;}
-  .pprint-cap::before{content:"🖨️"; font-size:13px;}
-  .pgrid{display:grid; grid-template-columns:repeat(4,1fr); gap:6px;}
-  .pg{background:linear-gradient(165deg,#f4f8ee,#eaf3dd); border:1px solid #dce9c6; border-radius:9px;
-    padding:7px 3px; text-align:center;}
-  .pg-q{display:block; font-size:10.5px; color:var(--muted); font-weight:600;}
-  .pg-p{display:block; font-size:13px; font-weight:800; color:var(--green-dark); margin-top:2px;}
-
-  .pnote{margin-top:11px; font-size:11.5px; color:var(--muted); background:var(--cream);
-    border:1px dashed #d6d0c2; border-radius:9px; padding:8px 10px; text-align:center;}
-
-  /* simple single-price card */
-  .pcard-simple .psingle{flex:0 0 auto; text-align:right;}
-  .ps-p{display:block; font-size:19px; font-weight:800; color:var(--green-dark);}
-  .ps-u{display:block; font-size:10.5px; color:var(--muted); font-weight:600; margin-top:1px;}
-
+  .hint{font-size:11.5px;color:var(--muted);margin:0 2px 10px;line-height:1.5;}
+  .pstack{display:flex;flex-direction:column;gap:12px;}
+  .pcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;box-shadow:0 2px 8px rgba(35,43,59,.05);}
+  .pcard-top{display:flex;align-items:center;gap:13px;}
+  .pthumb{width:68px;height:68px;border-radius:12px;object-fit:cover;flex:0 0 auto;background:#f0eee7;border:1px solid var(--line);}
+  .pthumb-ph{display:flex;align-items:center;justify-content:center;font-size:28px;}
+  .pmeta{flex:1;min-width:0;}
+  .pcode{font-size:18px;font-weight:800;color:var(--green-dark);line-height:1.1;}
+  .pdims{font-size:13px;color:var(--ink);font-weight:600;margin-top:3px;}
+  .pdims-tag{display:block;font-size:11.5px;color:var(--muted);font-weight:500;margin-top:2px;}
+  .ptable{display:flex;gap:9px;margin-top:12px;}
+  .ptier{flex:1;position:relative;background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:8px 10px;text-align:center;cursor:pointer;font-family:inherit;transition:transform .12s,box-shadow .12s;}
+  .ptier:active{transform:scale(.96);}
+  .pt-q{display:block;font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+  .pt-p{display:block;font-size:17px;font-weight:800;color:var(--ink);margin-top:2px;}
+  .pprint-cap{font-size:11px;font-weight:700;color:var(--green-dark);text-transform:uppercase;letter-spacing:.04em;margin:13px 0 7px;display:flex;align-items:center;gap:6px;}
+  .pprint-cap::before{content:"🖨️";font-size:13px;}
+  .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+  .pg{position:relative;background:linear-gradient(165deg,#f4f8ee,#eaf3dd);border:1px solid #dce9c6;border-radius:9px;padding:7px 3px;text-align:center;cursor:pointer;font-family:inherit;transition:transform .12s,box-shadow .12s;}
+  .pg:active{transform:scale(.96);}
+  .pg-q{display:block;font-size:10.5px;color:var(--muted);font-weight:600;}
+  .pg-p{display:block;font-size:13px;font-weight:800;color:var(--green-dark);margin-top:2px;}
+  .padd{position:absolute;top:5px;right:6px;width:17px;height:17px;border-radius:50%;background:var(--green);color:#fff;font-size:11px;font-weight:800;line-height:17px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.2);}
+  .padd-s{width:14px;height:14px;line-height:14px;font-size:9px;top:4px;right:4px;}
+  .added{animation:pop .35s;}
+  @keyframes pop{0%{transform:scale(1)}40%{transform:scale(1.05);box-shadow:0 0 0 3px var(--green-light)}100%{transform:scale(1)}}
+  .pnote{margin-top:11px;font-size:11.5px;color:var(--muted);background:var(--cream);border:1px dashed #d6d0c2;border-radius:9px;padding:8px 10px;text-align:center;}
+  .pcard-simple .psingle{flex:0 0 auto;text-align:right;position:relative;background:var(--cream);border:1px solid var(--line);border-radius:11px;padding:9px 12px;cursor:pointer;font-family:inherit;transition:transform .12s;}
+  .pcard-simple .psingle:active{transform:scale(.96);}
+  .ps-p{display:block;font-size:18px;font-weight:800;color:var(--green-dark);}
+  .ps-u{display:block;font-size:10px;color:var(--muted);font-weight:600;margin-top:1px;}
+  .pcard-simple .padd{top:-7px;right:-7px;}
   .screen-cta{padding:20px 2px 26px;}
   .screen-cta .btn{width:100%;}
-
-  /* PAYMENT + FOOTER */
-  .pay{margin:20px 20px 0; background:#fff; border:1px solid var(--line); border-radius:14px;
-    padding:14px 16px; font-size:12.5px; display:flex; align-items:center; gap:10px;}
+  .pay{margin:20px 20px 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:12.5px;display:flex;align-items:center;gap:10px;}
   .pay .emoji{font-size:20px;}
-  footer{margin-top:26px; background:var(--navy); color:#e8ecef; padding:26px 24px 30px;
-    text-align:center; border-radius:24px 24px 0 0;}
-  footer .leaf{font-size:22px; margin-bottom:6px;}
-  footer h3{margin:0 0 4px; font-size:16px; color:var(--green-light);}
-  footer p{margin:2px 0; font-size:13px; color:#cfd4da;}
-  footer a{color:#e8ecef; text-decoration:none;}
-  .contact-list{margin-top:14px; display:flex; flex-direction:column; gap:8px; align-items:center;}
+  footer{margin-top:26px;background:var(--navy);color:#e8ecef;padding:26px 24px 30px;text-align:center;border-radius:24px 24px 0 0;}
+  footer .leaf{font-size:22px;margin-bottom:6px;}
+  footer h3{margin:0 0 4px;font-size:16px;color:var(--green-light);}
+  footer p{margin:2px 0;font-size:13px;color:#cfd4da;}
+  footer a{color:#e8ecef;text-decoration:none;}
+  .contact-list{margin-top:14px;display:flex;flex-direction:column;gap:8px;align-items:center;}
   .contact-row{font-size:13px;}
-  .badge{margin-top:18px; font-size:10.5px; color:#8a93a3;}
+  .badge{margin-top:18px;font-size:10.5px;color:#8a93a3;}
+  /* CART BAR */
+  .cartbar{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);width:calc(100% - 32px);max-width:448px;z-index:40;background:linear-gradient(135deg,#2fbd5a,#25D366);color:#fff;border:none;border-radius:15px;padding:13px 16px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(37,211,102,.45);cursor:pointer;font-family:inherit;}
+  .cartbar:active{transform:translateX(-50%) scale(.98);}
+  .cartbar-ic{font-size:20px;position:relative;}
+  .cartbar-badge{position:absolute;top:-7px;right:-9px;background:#fff;color:var(--green-dark);font-size:10px;font-weight:800;min-width:16px;height:16px;line-height:16px;border-radius:9px;padding:0 3px;}
+  .cartbar-txt{font-weight:700;font-size:13px;flex:1;text-align:left;}
+  .cartbar-total{font-weight:800;font-size:15px;}
+  .cartbar-cta{font-size:12px;font-weight:700;opacity:.9;}
+  /* CART SCREEN */
+  .citem{display:flex;align-items:center;gap:11px;background:#fff;border:1px solid var(--line);border-radius:13px;padding:11px 12px;margin-bottom:10px;}
+  .citem-info{flex:1;min-width:0;}
+  .citem-n{font-size:14.5px;font-weight:800;color:var(--ink);}
+  .citem-n span{font-size:12px;font-weight:600;color:var(--muted);}
+  .citem-o{font-size:12px;color:var(--green-dark);font-weight:700;margin-top:2px;}
+  .citem-qty{display:flex;align-items:center;gap:0;flex:0 0 auto;border:1px solid var(--line);border-radius:9px;overflow:hidden;}
+  .citem-qty button{width:30px;height:30px;border:none;background:var(--cream);color:var(--ink);font-size:17px;font-weight:800;cursor:pointer;font-family:inherit;}
+  .citem-qty button:active{background:#e6e1d5;}
+  .citem-qty span{min-width:26px;text-align:center;font-weight:800;font-size:14px;}
+  .citem-sub{flex:0 0 auto;font-weight:800;color:var(--green-dark);font-size:14px;min-width:56px;text-align:right;}
+  .cart-total{display:flex;justify-content:space-between;align-items:center;background:#fff;border:2px solid var(--green);border-radius:13px;padding:14px 16px;font-size:15px;font-weight:700;margin:6px 0 14px;}
+  .cart-total b{font-size:22px;color:var(--green-dark);}
+  .cart-input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:12px;font-size:14px;font-family:inherit;margin-bottom:12px;background:#fff;}
+  .cart-clear{display:block;width:100%;text-align:center;background:none;border:none;color:var(--muted);font-size:12.5px;font-family:inherit;cursor:pointer;margin-top:14px;text-decoration:underline;}
   [hidden]{display:none !important;}
 </style>
 </head>
 <body>
 <div class="page">
 
-  <!-- HOME -->
   <div id="home">
     <div class="hero">
       <img src="assets/logo.png" alt="Sofi Graf">
@@ -151,37 +131,16 @@
       <a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20de%20papel." target="_blank" rel="noopener">💬 WhatsApp</a>
       <a class="btn btn-secondary" href="tel:+59322555684">📞 Llamar</a>
     </div>
-    <div class="home-title">
-      <h2>Nuestros productos</h2>
-      <p>Toca una categoría para ver fotos, medidas y precios</p>
-    </div>
+    <div class="home-title"><h2>Nuestros productos</h2><p>Toca una categoría, arma tu pedido y envíalo por WhatsApp</p></div>
     <div class="grid-menu">
-      <button class="grid-btn" onclick="showScreen('screen-ventana')">
-        <img class="bgphoto" src="assets/products/tile-ventana.jpg" alt="">
-        <div class="overlay"></div><div class="chip">🪟</div>
-        <div class="text"><span class="label">Con ventana</span><span class="sub">9 medidas</span></div>
-      </button>
-      <button class="grid-btn" onclick="showScreen('screen-kraft')">
-        <img class="bgphoto" src="assets/products/kraft-2.jpg" alt="">
-        <div class="overlay"></div><div class="chip">👜</div>
-        <div class="text"><span class="label">Kraft</span><span class="sub">29 medidas</span></div>
-      </button>
-      <button class="grid-btn" onclick="showScreen('screen-eco')">
-        <img class="bgphoto" src="assets/products/eco-1.jpg" alt="">
-        <div class="overlay"></div><div class="chip">🌿</div>
-        <div class="text"><span class="label">Ecológicas</span><span class="sub">Cartulina · 6 medidas</span></div>
-      </button>
-      <button class="grid-btn" onclick="showScreen('screen-cajas')">
-        <img class="bgphoto" src="assets/products/caja-regalo.jpg" alt="">
-        <div class="overlay"></div><div class="chip">📦</div>
-        <div class="text"><span class="label">Cajas de cartón</span><span class="sub">34 modelos</span></div>
-      </button>
+      <button class="grid-btn" onclick="showScreen('screen-ventana')"><img class="bgphoto" src="assets/products/tile-ventana.jpg" alt=""><div class="overlay"></div><div class="chip">🪟</div><div class="text"><span class="label">Con ventana</span><span class="sub">9 medidas</span></div></button>
+      <button class="grid-btn" onclick="showScreen('screen-kraft')"><img class="bgphoto" src="assets/products/kraft-2.jpg" alt=""><div class="overlay"></div><div class="chip">👜</div><div class="text"><span class="label">Kraft</span><span class="sub">29 medidas</span></div></button>
+      <button class="grid-btn" onclick="showScreen('screen-eco')"><img class="bgphoto" src="assets/products/eco-1.jpg" alt=""><div class="overlay"></div><div class="chip">🌿</div><div class="text"><span class="label">Ecológicas</span><span class="sub">Cartulina · 6 medidas</span></div></button>
+      <button class="grid-btn" onclick="showScreen('screen-cajas')"><img class="bgphoto" src="assets/products/caja-regalo.jpg" alt=""><div class="overlay"></div><div class="chip">📦</div><div class="text"><span class="label">Cajas de cartón</span><span class="sub">34 modelos</span></div></button>
     </div>
     <div class="pay"><span class="emoji">💳</span><span>Aceptamos todas las tarjetas de crédito y débito (Visa, Mastercard, Diners Club, PacifiCard, Discover).</span></div>
     <footer>
-      <div class="leaf">🌿</div>
-      <h3>Sofi Graf</h3>
-      <p>Fabricantes de Bolsas de Papel y Cajas</p>
+      <div class="leaf">🌿</div><h3>Sofi Graf</h3><p>Fabricantes de Bolsas de Papel y Cajas</p>
       <div class="contact-list">
         <div class="contact-row">📍 Venezuela N17-54 y Bogotá, Quito</div>
         <div class="contact-row">👤 Kleber Palomeque</div>
@@ -193,63 +152,59 @@
     </footer>
   </div>
 
-  <!-- CON VENTANA -->
   <div id="screen-ventana" class="screen" hidden>
-    <div class="screen-head">
-      <button class="back-btn" onclick="showHome()">←</button>
-      <div class="stitle"><b>🪟 Fundas con ventana</b><small>Precio por 100 unidades</small></div>
-    </div>
+    <div class="screen-head"><button class="back-btn" onclick="showHome()">←</button><div class="stitle"><b>🪟 Fundas con ventana</b><small>Precio por 100 unidades</small></div></div>
     <div class="screen-body">
-      <p class="intro">Fundas de papel kraft con visor transparente. <b>Precio por 100 unidades</b>, IVA incluido.</p>
+      <p class="intro">Fundas de papel kraft con visor transparente. <b>Precio por 100 unidades</b>, IVA incluido.<span class="tapnote">👉 Toca el precio que quieras para agregarlo a tu pedido.</span></p>
       <div class="grouphd"><span class="grouphd-ic">🪟</span>Con ventana</div>
       <div class="pstack">
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">10 × 15 cm</div></div>
-            <div class="psingle"><span class="ps-p">$28.78</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="10 × 15 cm" data-d="" data-o="por 100 u" data-p="28.78"><span class="ps-p">$28.78</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">10 × 18 cm</div></div>
-            <div class="psingle"><span class="ps-p">$34.28</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="10 × 18 cm" data-d="" data-o="por 100 u" data-p="34.28"><span class="ps-p">$34.28</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">14 × 22 cm</div></div>
-            <div class="psingle"><span class="ps-p">$42.86</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="14 × 22 cm" data-d="" data-o="por 100 u" data-p="42.86"><span class="ps-p">$42.86</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">16 × 26 cm</div></div>
-            <div class="psingle"><span class="ps-p">$51.42</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="16 × 26 cm" data-d="" data-o="por 100 u" data-p="51.42"><span class="ps-p">$51.42</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">20 × 30 cm</div></div>
-            <div class="psingle"><span class="ps-p">$71.42</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="20 × 30 cm" data-d="" data-o="por 100 u" data-p="71.42"><span class="ps-p">$71.42</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">25 × 35 cm</div></div>
-            <div class="psingle"><span class="ps-p">$84.00</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="25 × 35 cm" data-d="" data-o="por 100 u" data-p="84.00"><span class="ps-p">$84.00</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">30 × 40 cm</div></div>
-            <div class="psingle"><span class="ps-p">$98.00</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="30 × 40 cm" data-d="" data-o="por 100 u" data-p="98.00"><span class="ps-p">$98.00</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -257,831 +212,694 @@
       <div class="pstack">
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">9 × 14 cm</div></div>
-            <div class="psingle"><span class="ps-p">$22.64</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="9 × 14 cm" data-d="" data-o="por 100 u" data-p="22.64"><span class="ps-p">$22.64</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">17 × 24 cm</div></div>
-            <div class="psingle"><span class="ps-p">$57.14</span><span class="ps-u">por 100 u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="17 × 24 cm" data-d="" data-o="por 100 u" data-p="57.14"><span class="ps-p">$57.14</span><span class="ps-u">por 100 u</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
-      <div class="screen-cta"><a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20con%2Fsin%20ventana." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a></div>
+      <div class="screen-cta"><a class="btn btn-secondary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20tengo%20una%20consulta%20sobre%20fundas%20con%20ventana." target="_blank" rel="noopener">💬 Hacer una consulta</a></div>
     </div>
   </div>
 
-  <!-- KRAFT -->
   <div id="screen-kraft" class="screen" hidden>
-    <div class="screen-head">
-      <button class="back-btn" onclick="showHome()">←</button>
-      <div class="stitle"><b>👜 Fundas Kraft con manija</b><small>Líneas C, SB y CX · 29 medidas</small></div>
-    </div>
+    <div class="screen-head"><button class="back-btn" onclick="showHome()">←</button><div class="stitle"><b>👜 Fundas Kraft con manija</b><small>Líneas C, SB y CX · 29 medidas</small></div></div>
     <div class="screen-body">
-      <p class="intro">Cada precio incluye: <b>docena</b> y <b>ciento</b> sin impresión, y precios especiales de <b>100 a 1000 unidades</b> impresas con tu logo a 1 color. IVA incluido.</p>
+      <p class="intro">Cada precio incluye <b>docena</b> y <b>ciento</b> sin impresión, y precios de <b>100 a 1000 unidades</b> impresas con tu logo a 1 color. IVA incluido.<span class="tapnote">👉 Toca el precio que quieras para agregarlo a tu pedido.</span></p>
       <div class="pstack">
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C1.jpg" alt="C-1">
-          <div class="pmeta">
-            <div class="pcode">C-1</div>
-            <div class="pdims">10×11×6 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-1</div><div class="pdims">10×11×6 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$2.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$13.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-1" data-d="10×11×6 cm" data-o="Docena" data-p="2.00"><span class="pt-q">Docena</span><span class="pt-p">$2.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-1" data-d="10×11×6 cm" data-o="Ciento" data-p="13.00"><span class="pt-q">Ciento</span><span class="pt-p">$13.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$38.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$64.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$90.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$130.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-1" data-d="10×11×6 cm" data-o="100 u impresas" data-p="38.00"><span class="pg-q">100 u</span><span class="pg-p">$38.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-1" data-d="10×11×6 cm" data-o="300 u impresas" data-p="64.00"><span class="pg-q">300 u</span><span class="pg-p">$64.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-1" data-d="10×11×6 cm" data-o="500 u impresas" data-p="90.00"><span class="pg-q">500 u</span><span class="pg-p">$90.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-1" data-d="10×11×6 cm" data-o="1000 u impresas" data-p="130.00"><span class="pg-q">1000 u</span><span class="pg-p">$130.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C2.jpg" alt="C-2">
-          <div class="pmeta">
-            <div class="pcode">C-2</div>
-            <div class="pdims">27×14,5×7 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-2</div><div class="pdims">27×14,5×7 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$3.50</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$25.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-2" data-d="27×14,5×7 cm" data-o="Docena" data-p="3.50"><span class="pt-q">Docena</span><span class="pt-p">$3.50</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-2" data-d="27×14,5×7 cm" data-o="Ciento" data-p="25.00"><span class="pt-q">Ciento</span><span class="pt-p">$25.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$100.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$150.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$250.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-2" data-d="27×14,5×7 cm" data-o="100 u impresas" data-p="50.00"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-2" data-d="27×14,5×7 cm" data-o="300 u impresas" data-p="100.00"><span class="pg-q">300 u</span><span class="pg-p">$100.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-2" data-d="27×14,5×7 cm" data-o="500 u impresas" data-p="150.00"><span class="pg-q">500 u</span><span class="pg-p">$150.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-2" data-d="27×14,5×7 cm" data-o="1000 u impresas" data-p="250.00"><span class="pg-q">1000 u</span><span class="pg-p">$250.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C3.jpg" alt="C-3">
-          <div class="pmeta">
-            <div class="pcode">C-3</div>
-            <div class="pdims">38×21,5×10 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-3</div><div class="pdims">38×21,5×10 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$5.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-3" data-d="38×21,5×10 cm" data-o="Docena" data-p="5.00"><span class="pt-q">Docena</span><span class="pt-p">$5.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-3" data-d="38×21,5×10 cm" data-o="Ciento" data-p="38.00"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$68.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$144.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$220.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$380.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-3" data-d="38×21,5×10 cm" data-o="100 u impresas" data-p="68.00"><span class="pg-q">100 u</span><span class="pg-p">$68.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-3" data-d="38×21,5×10 cm" data-o="300 u impresas" data-p="144.00"><span class="pg-q">300 u</span><span class="pg-p">$144.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-3" data-d="38×21,5×10 cm" data-o="500 u impresas" data-p="220.00"><span class="pg-q">500 u</span><span class="pg-p">$220.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-3" data-d="38×21,5×10 cm" data-o="1000 u impresas" data-p="380.00"><span class="pg-q">1000 u</span><span class="pg-p">$380.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C4.jpg" alt="C-4">
-          <div class="pmeta">
-            <div class="pcode">C-4</div>
-            <div class="pdims">50×28×16 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-4</div><div class="pdims">50×28×16 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$10.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$75.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-4" data-d="50×28×16 cm" data-o="Docena" data-p="10.00"><span class="pt-q">Docena</span><span class="pt-p">$10.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-4" data-d="50×28×16 cm" data-o="Ciento" data-p="75.00"><span class="pt-q">Ciento</span><span class="pt-p">$75.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$115.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$265.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$415.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$750.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-4" data-d="50×28×16 cm" data-o="100 u impresas" data-p="115.00"><span class="pg-q">100 u</span><span class="pg-p">$115.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-4" data-d="50×28×16 cm" data-o="300 u impresas" data-p="265.00"><span class="pg-q">300 u</span><span class="pg-p">$265.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-4" data-d="50×28×16 cm" data-o="500 u impresas" data-p="415.00"><span class="pg-q">500 u</span><span class="pg-p">$415.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-4" data-d="50×28×16 cm" data-o="1000 u impresas" data-p="750.00"><span class="pg-q">1000 u</span><span class="pg-p">$750.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C5.jpg" alt="C-5">
-          <div class="pmeta">
-            <div class="pcode">C-5</div>
-            <div class="pdims">21×10×8 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-5</div><div class="pdims">21×10×8 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$23.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-5" data-d="21×10×8 cm" data-o="Docena" data-p="3.00"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-5" data-d="21×10×8 cm" data-o="Ciento" data-p="23.00"><span class="pt-q">Ciento</span><span class="pt-p">$23.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$48.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$94.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$140.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$230.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-5" data-d="21×10×8 cm" data-o="100 u impresas" data-p="48.00"><span class="pg-q">100 u</span><span class="pg-p">$48.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-5" data-d="21×10×8 cm" data-o="300 u impresas" data-p="94.00"><span class="pg-q">300 u</span><span class="pg-p">$94.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-5" data-d="21×10×8 cm" data-o="500 u impresas" data-p="140.00"><span class="pg-q">500 u</span><span class="pg-p">$140.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-5" data-d="21×10×8 cm" data-o="1000 u impresas" data-p="230.00"><span class="pg-q">1000 u</span><span class="pg-p">$230.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C6.jpg" alt="C-6">
-          <div class="pmeta">
-            <div class="pcode">C-6</div>
-            <div class="pdims">26×12×10 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-6</div><div class="pdims">26×12×10 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$3.50</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$25.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-6" data-d="26×12×10 cm" data-o="Docena" data-p="3.50"><span class="pt-q">Docena</span><span class="pt-p">$3.50</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-6" data-d="26×12×10 cm" data-o="Ciento" data-p="25.00"><span class="pt-q">Ciento</span><span class="pt-p">$25.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$100.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$150.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$250.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-6" data-d="26×12×10 cm" data-o="100 u impresas" data-p="50.00"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-6" data-d="26×12×10 cm" data-o="300 u impresas" data-p="100.00"><span class="pg-q">300 u</span><span class="pg-p">$100.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-6" data-d="26×12×10 cm" data-o="500 u impresas" data-p="150.00"><span class="pg-q">500 u</span><span class="pg-p">$150.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-6" data-d="26×12×10 cm" data-o="1000 u impresas" data-p="250.00"><span class="pg-q">1000 u</span><span class="pg-p">$250.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C7.jpg" alt="C-7">
-          <div class="pmeta">
-            <div class="pcode">C-7</div>
-            <div class="pdims">25×15×13 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-7</div><div class="pdims">25×15×13 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$4.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$30.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-7" data-d="25×15×13 cm" data-o="Docena" data-p="4.00"><span class="pt-q">Docena</span><span class="pt-p">$4.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-7" data-d="25×15×13 cm" data-o="Ciento" data-p="30.00"><span class="pt-q">Ciento</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$60.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$120.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$180.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$300.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-7" data-d="25×15×13 cm" data-o="100 u impresas" data-p="60.00"><span class="pg-q">100 u</span><span class="pg-p">$60.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-7" data-d="25×15×13 cm" data-o="300 u impresas" data-p="120.00"><span class="pg-q">300 u</span><span class="pg-p">$120.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-7" data-d="25×15×13 cm" data-o="500 u impresas" data-p="180.00"><span class="pg-q">500 u</span><span class="pg-p">$180.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-7" data-d="25×15×13 cm" data-o="1000 u impresas" data-p="300.00"><span class="pg-q">1000 u</span><span class="pg-p">$300.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C8.jpg" alt="C-8">
-          <div class="pmeta">
-            <div class="pcode">C-8</div>
-            <div class="pdims">27×24×15 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-8</div><div class="pdims">27×24×15 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$5.50</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$40.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-8" data-d="27×24×15 cm" data-o="Docena" data-p="5.50"><span class="pt-q">Docena</span><span class="pt-p">$5.50</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-8" data-d="27×24×15 cm" data-o="Ciento" data-p="40.00"><span class="pt-q">Ciento</span><span class="pt-p">$40.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$80.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$160.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$240.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$400.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-8" data-d="27×24×15 cm" data-o="100 u impresas" data-p="80.00"><span class="pg-q">100 u</span><span class="pg-p">$80.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-8" data-d="27×24×15 cm" data-o="300 u impresas" data-p="160.00"><span class="pg-q">300 u</span><span class="pg-p">$160.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-8" data-d="27×24×15 cm" data-o="500 u impresas" data-p="240.00"><span class="pg-q">500 u</span><span class="pg-p">$240.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-8" data-d="27×24×15 cm" data-o="1000 u impresas" data-p="400.00"><span class="pg-q">1000 u</span><span class="pg-p">$400.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C9.jpg" alt="C-9">
-          <div class="pmeta">
-            <div class="pcode">C-9</div>
-            <div class="pdims">37×28×15 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-9</div><div class="pdims">37×28×15 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-9" data-d="37×28×15 cm" data-o="Docena" data-p="7.00"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-9" data-d="37×28×15 cm" data-o="Ciento" data-p="52.00"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-9" data-d="37×28×15 cm" data-o="100 u impresas" data-p="92.00"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-9" data-d="37×28×15 cm" data-o="300 u impresas" data-p="196.00"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-9" data-d="37×28×15 cm" data-o="500 u impresas" data-p="300.00"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-9" data-d="37×28×15 cm" data-o="1000 u impresas" data-p="520.00"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C10.jpg" alt="C-10">
-          <div class="pmeta">
-            <div class="pcode">C-10</div>
-            <div class="pdims">36×11×10 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-10</div><div class="pdims">36×11×10 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$5.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-10" data-d="36×11×10 cm" data-o="Docena" data-p="5.00"><span class="pt-q">Docena</span><span class="pt-p">$5.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-10" data-d="36×11×10 cm" data-o="Ciento" data-p="38.00"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$68.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$144.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$220.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$380.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-10" data-d="36×11×10 cm" data-o="100 u impresas" data-p="68.00"><span class="pg-q">100 u</span><span class="pg-p">$68.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-10" data-d="36×11×10 cm" data-o="300 u impresas" data-p="144.00"><span class="pg-q">300 u</span><span class="pg-p">$144.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-10" data-d="36×11×10 cm" data-o="500 u impresas" data-p="220.00"><span class="pg-q">500 u</span><span class="pg-p">$220.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-10" data-d="36×11×10 cm" data-o="1000 u impresas" data-p="380.00"><span class="pg-q">1000 u</span><span class="pg-p">$380.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C11.jpg" alt="C-11">
-          <div class="pmeta">
-            <div class="pcode">C-11</div>
-            <div class="pdims">40×25×22 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-11</div><div class="pdims">40×25×22 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$8.50</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$65.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-11" data-d="40×25×22 cm" data-o="Docena" data-p="8.50"><span class="pt-q">Docena</span><span class="pt-p">$8.50</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-11" data-d="40×25×22 cm" data-o="Ciento" data-p="65.00"><span class="pt-q">Ciento</span><span class="pt-p">$65.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$105.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$235.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$365.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$650.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-11" data-d="40×25×22 cm" data-o="100 u impresas" data-p="105.00"><span class="pg-q">100 u</span><span class="pg-p">$105.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-11" data-d="40×25×22 cm" data-o="300 u impresas" data-p="235.00"><span class="pg-q">300 u</span><span class="pg-p">$235.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-11" data-d="40×25×22 cm" data-o="500 u impresas" data-p="365.00"><span class="pg-q">500 u</span><span class="pg-p">$365.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-11" data-d="40×25×22 cm" data-o="1000 u impresas" data-p="650.00"><span class="pg-q">1000 u</span><span class="pg-p">$650.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C12.jpg" alt="C-12">
-          <div class="pmeta">
-            <div class="pcode">C-12</div>
-            <div class="pdims">40×22×15 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-12</div><div class="pdims">40×22×15 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-12" data-d="40×22×15 cm" data-o="Docena" data-p="7.00"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-12" data-d="40×22×15 cm" data-o="Ciento" data-p="52.00"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-12" data-d="40×22×15 cm" data-o="100 u impresas" data-p="92.00"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-12" data-d="40×22×15 cm" data-o="300 u impresas" data-p="196.00"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-12" data-d="40×22×15 cm" data-o="500 u impresas" data-p="300.00"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-12" data-d="40×22×15 cm" data-o="1000 u impresas" data-p="520.00"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C13.jpg" alt="C-13">
-          <div class="pmeta">
-            <div class="pcode">C-13</div>
-            <div class="pdims">16×9×6 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-13</div><div class="pdims">16×9×6 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$2.30</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$14.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-13" data-d="16×9×6 cm" data-o="Docena" data-p="2.30"><span class="pt-q">Docena</span><span class="pt-p">$2.30</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-13" data-d="16×9×6 cm" data-o="Ciento" data-p="14.00"><span class="pt-q">Ciento</span><span class="pt-p">$14.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$39.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$67.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$95.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$140.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-13" data-d="16×9×6 cm" data-o="100 u impresas" data-p="39.00"><span class="pg-q">100 u</span><span class="pg-p">$39.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-13" data-d="16×9×6 cm" data-o="300 u impresas" data-p="67.00"><span class="pg-q">300 u</span><span class="pg-p">$67.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-13" data-d="16×9×6 cm" data-o="500 u impresas" data-p="95.00"><span class="pg-q">500 u</span><span class="pg-p">$95.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-13" data-d="16×9×6 cm" data-o="1000 u impresas" data-p="140.00"><span class="pg-q">1000 u</span><span class="pg-p">$140.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C14.jpg" alt="C-14">
-          <div class="pmeta">
-            <div class="pcode">C-14</div>
-            <div class="pdims">21×10×6 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-14</div><div class="pdims">21×10×6 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$2.50</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$18.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-14" data-d="21×10×6 cm" data-o="Docena" data-p="2.50"><span class="pt-q">Docena</span><span class="pt-p">$2.50</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-14" data-d="21×10×6 cm" data-o="Ciento" data-p="18.00"><span class="pt-q">Ciento</span><span class="pt-p">$18.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$43.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$79.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$115.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$180.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-14" data-d="21×10×6 cm" data-o="100 u impresas" data-p="43.00"><span class="pg-q">100 u</span><span class="pg-p">$43.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-14" data-d="21×10×6 cm" data-o="300 u impresas" data-p="79.00"><span class="pg-q">300 u</span><span class="pg-p">$79.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-14" data-d="21×10×6 cm" data-o="500 u impresas" data-p="115.00"><span class="pg-q">500 u</span><span class="pg-p">$115.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-14" data-d="21×10×6 cm" data-o="1000 u impresas" data-p="180.00"><span class="pg-q">1000 u</span><span class="pg-p">$180.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C15.jpg" alt="C-15">
-          <div class="pmeta">
-            <div class="pcode">C-15</div>
-            <div class="pdims">40×30×10 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-15</div><div class="pdims">40×30×10 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-15" data-d="40×30×10 cm" data-o="Docena" data-p="7.00"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-15" data-d="40×30×10 cm" data-o="Ciento" data-p="52.00"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-15" data-d="40×30×10 cm" data-o="100 u impresas" data-p="92.00"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-15" data-d="40×30×10 cm" data-o="300 u impresas" data-p="196.00"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-15" data-d="40×30×10 cm" data-o="500 u impresas" data-p="300.00"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-15" data-d="40×30×10 cm" data-o="1000 u impresas" data-p="520.00"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C16.jpg" alt="C-16">
-          <div class="pmeta">
-            <div class="pcode">C-16</div>
-            <div class="pdims">20×20×5 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-16</div><div class="pdims">20×20×5 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$20.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-16" data-d="20×20×5 cm" data-o="Docena" data-p="3.00"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-16" data-d="20×20×5 cm" data-o="Ciento" data-p="20.00"><span class="pt-q">Ciento</span><span class="pt-p">$20.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$90.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$130.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$200.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-16" data-d="20×20×5 cm" data-o="100 u impresas" data-p="50.00"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-16" data-d="20×20×5 cm" data-o="300 u impresas" data-p="90.00"><span class="pg-q">300 u</span><span class="pg-p">$90.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-16" data-d="20×20×5 cm" data-o="500 u impresas" data-p="130.00"><span class="pg-q">500 u</span><span class="pg-p">$130.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-16" data-d="20×20×5 cm" data-o="1000 u impresas" data-p="200.00"><span class="pg-q">1000 u</span><span class="pg-p">$200.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C17k.jpg" alt="C-17">
-          <div class="pmeta">
-            <div class="pcode">C-17</div>
-            <div class="pdims">25×20×10 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-17</div><div class="pdims">25×20×10 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$4.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$28.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-17" data-d="25×20×10 cm" data-o="Docena" data-p="4.00"><span class="pt-q">Docena</span><span class="pt-p">$4.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-17" data-d="25×20×10 cm" data-o="Ciento" data-p="28.00"><span class="pt-q">Ciento</span><span class="pt-p">$28.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$58.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$114.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$170.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$280.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-17" data-d="25×20×10 cm" data-o="100 u impresas" data-p="58.00"><span class="pg-q">100 u</span><span class="pg-p">$58.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-17" data-d="25×20×10 cm" data-o="300 u impresas" data-p="114.00"><span class="pg-q">300 u</span><span class="pg-p">$114.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-17" data-d="25×20×10 cm" data-o="500 u impresas" data-p="170.00"><span class="pg-q">500 u</span><span class="pg-p">$170.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-17" data-d="25×20×10 cm" data-o="1000 u impresas" data-p="280.00"><span class="pg-q">1000 u</span><span class="pg-p">$280.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C18.jpg" alt="C-18">
-          <div class="pmeta">
-            <div class="pcode">C-18</div>
-            <div class="pdims">15×14×10 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-18</div><div class="pdims">15×14×10 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$20.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-18" data-d="15×14×10 cm" data-o="Docena" data-p="3.00"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-18" data-d="15×14×10 cm" data-o="Ciento" data-p="20.00"><span class="pt-q">Ciento</span><span class="pt-p">$20.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$90.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$130.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$200.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-18" data-d="15×14×10 cm" data-o="100 u impresas" data-p="50.00"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-18" data-d="15×14×10 cm" data-o="300 u impresas" data-p="90.00"><span class="pg-q">300 u</span><span class="pg-p">$90.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-18" data-d="15×14×10 cm" data-o="500 u impresas" data-p="130.00"><span class="pg-q">500 u</span><span class="pg-p">$130.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-18" data-d="15×14×10 cm" data-o="1000 u impresas" data-p="200.00"><span class="pg-q">1000 u</span><span class="pg-p">$200.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C19.jpg" alt="C-19">
-          <div class="pmeta">
-            <div class="pcode">C-19</div>
-            <div class="pdims">27×30×9 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-19</div><div class="pdims">27×30×9 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$4.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$30.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-19" data-d="27×30×9 cm" data-o="Docena" data-p="4.00"><span class="pt-q">Docena</span><span class="pt-p">$4.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-19" data-d="27×30×9 cm" data-o="Ciento" data-p="30.00"><span class="pt-q">Ciento</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$60.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$120.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$180.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$300.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-19" data-d="27×30×9 cm" data-o="100 u impresas" data-p="60.00"><span class="pg-q">100 u</span><span class="pg-p">$60.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-19" data-d="27×30×9 cm" data-o="300 u impresas" data-p="120.00"><span class="pg-q">300 u</span><span class="pg-p">$120.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-19" data-d="27×30×9 cm" data-o="500 u impresas" data-p="180.00"><span class="pg-q">500 u</span><span class="pg-p">$180.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-19" data-d="27×30×9 cm" data-o="1000 u impresas" data-p="300.00"><span class="pg-q">1000 u</span><span class="pg-p">$300.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C20.jpg" alt="C-20">
-          <div class="pmeta">
-            <div class="pcode">C-20</div>
-            <div class="pdims">36×44×16 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-20</div><div class="pdims">36×44×16 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.50</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$54.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-20" data-d="36×44×16 cm" data-o="Docena" data-p="7.50"><span class="pt-q">Docena</span><span class="pt-p">$7.50</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-20" data-d="36×44×16 cm" data-o="Ciento" data-p="54.00"><span class="pt-q">Ciento</span><span class="pt-p">$54.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$94.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$202.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$310.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$540.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-20" data-d="36×44×16 cm" data-o="100 u impresas" data-p="94.00"><span class="pg-q">100 u</span><span class="pg-p">$94.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-20" data-d="36×44×16 cm" data-o="300 u impresas" data-p="202.00"><span class="pg-q">300 u</span><span class="pg-p">$202.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-20" data-d="36×44×16 cm" data-o="500 u impresas" data-p="310.00"><span class="pg-q">500 u</span><span class="pg-p">$310.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-20" data-d="36×44×16 cm" data-o="1000 u impresas" data-p="540.00"><span class="pg-q">1000 u</span><span class="pg-p">$540.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB1.jpg" alt="SB#1">
-          <div class="pmeta">
-            <div class="pcode">SB#1</div>
-            <div class="pdims">12×16×8 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#1</div><div class="pdims">12×16×8 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$20.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#1" data-d="12×16×8 cm" data-o="Docena" data-p="3.00"><span class="pt-q">Docena</span><span class="pt-p">$3.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#1" data-d="12×16×8 cm" data-o="Ciento" data-p="20.00"><span class="pt-q">Ciento</span><span class="pt-p">$20.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$90.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$130.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$200.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1" data-d="12×16×8 cm" data-o="100 u impresas" data-p="50.00"><span class="pg-q">100 u</span><span class="pg-p">$50.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1" data-d="12×16×8 cm" data-o="300 u impresas" data-p="90.00"><span class="pg-q">300 u</span><span class="pg-p">$90.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1" data-d="12×16×8 cm" data-o="500 u impresas" data-p="130.00"><span class="pg-q">500 u</span><span class="pg-p">$130.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1" data-d="12×16×8 cm" data-o="1000 u impresas" data-p="200.00"><span class="pg-q">1000 u</span><span class="pg-p">$200.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB2.jpg" alt="SB#2">
-          <div class="pmeta">
-            <div class="pcode">SB#2</div>
-            <div class="pdims">20×25×12 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#2</div><div class="pdims">20×25×12 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$5.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#2" data-d="20×25×12 cm" data-o="Docena" data-p="5.00"><span class="pt-q">Docena</span><span class="pt-p">$5.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#2" data-d="20×25×12 cm" data-o="Ciento" data-p="38.00"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$68.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$144.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$220.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$380.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2" data-d="20×25×12 cm" data-o="100 u impresas" data-p="68.00"><span class="pg-q">100 u</span><span class="pg-p">$68.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2" data-d="20×25×12 cm" data-o="300 u impresas" data-p="144.00"><span class="pg-q">300 u</span><span class="pg-p">$144.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2" data-d="20×25×12 cm" data-o="500 u impresas" data-p="220.00"><span class="pg-q">500 u</span><span class="pg-p">$220.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2" data-d="20×25×12 cm" data-o="1000 u impresas" data-p="380.00"><span class="pg-q">1000 u</span><span class="pg-p">$380.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB3.jpg" alt="SB#3">
-          <div class="pmeta">
-            <div class="pcode">SB#3</div>
-            <div class="pdims">24×33×11,5 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#3</div><div class="pdims">24×33×11,5 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#3" data-d="24×33×11,5 cm" data-o="Docena" data-p="7.00"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#3" data-d="24×33×11,5 cm" data-o="Ciento" data-p="52.00"><span class="pt-q">Ciento</span><span class="pt-p">$52.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3" data-d="24×33×11,5 cm" data-o="100 u impresas" data-p="92.00"><span class="pg-q">100 u</span><span class="pg-p">$92.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3" data-d="24×33×11,5 cm" data-o="300 u impresas" data-p="196.00"><span class="pg-q">300 u</span><span class="pg-p">$196.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3" data-d="24×33×11,5 cm" data-o="500 u impresas" data-p="300.00"><span class="pg-q">500 u</span><span class="pg-p">$300.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3" data-d="24×33×11,5 cm" data-o="1000 u impresas" data-p="520.00"><span class="pg-q">1000 u</span><span class="pg-p">$520.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB4.jpg" alt="SB#4">
-          <div class="pmeta">
-            <div class="pcode">SB#4</div>
-            <div class="pdims">29×36×12 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#4</div><div class="pdims">29×36×12 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$8.80</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$65.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#4" data-d="29×36×12 cm" data-o="Docena" data-p="8.80"><span class="pt-q">Docena</span><span class="pt-p">$8.80</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#4" data-d="29×36×12 cm" data-o="Ciento" data-p="65.00"><span class="pt-q">Ciento</span><span class="pt-p">$65.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$105.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$235.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$365.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$650.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4" data-d="29×36×12 cm" data-o="100 u impresas" data-p="105.00"><span class="pg-q">100 u</span><span class="pg-p">$105.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4" data-d="29×36×12 cm" data-o="300 u impresas" data-p="235.00"><span class="pg-q">300 u</span><span class="pg-p">$235.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4" data-d="29×36×12 cm" data-o="500 u impresas" data-p="365.00"><span class="pg-q">500 u</span><span class="pg-p">$365.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4" data-d="29×36×12 cm" data-o="1000 u impresas" data-p="650.00"><span class="pg-q">1000 u</span><span class="pg-p">$650.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB5.jpg" alt="SB#5">
-          <div class="pmeta">
-            <div class="pcode">SB#5</div>
-            <div class="pdims">40×45×16 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#5</div><div class="pdims">40×45×16 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$16.50</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$120.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#5" data-d="40×45×16 cm" data-o="Docena" data-p="16.50"><span class="pt-q">Docena</span><span class="pt-p">$16.50</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#5" data-d="40×45×16 cm" data-o="Ciento" data-p="120.00"><span class="pt-q">Ciento</span><span class="pt-p">$120.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$180.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$420.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$660.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$1,200.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#5" data-d="40×45×16 cm" data-o="100 u impresas" data-p="180.00"><span class="pg-q">100 u</span><span class="pg-p">$180.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#5" data-d="40×45×16 cm" data-o="300 u impresas" data-p="420.00"><span class="pg-q">300 u</span><span class="pg-p">$420.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#5" data-d="40×45×16 cm" data-o="500 u impresas" data-p="660.00"><span class="pg-q">500 u</span><span class="pg-p">$660.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#5" data-d="40×45×16 cm" data-o="1000 u impresas" data-p="1200.00"><span class="pg-q">1000 u</span><span class="pg-p">$1,200.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB6.jpg" alt="SB#6">
-          <div class="pmeta">
-            <div class="pcode">SB#6</div>
-            <div class="pdims">50×50×18 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#6</div><div class="pdims">50×50×18 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$21.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$150.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#6" data-d="50×50×18 cm" data-o="Docena" data-p="21.00"><span class="pt-q">Docena</span><span class="pt-p">$21.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#6" data-d="50×50×18 cm" data-o="Ciento" data-p="150.00"><span class="pt-q">Ciento</span><span class="pt-p">$150.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$210.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$510.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$810.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$1,500.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#6" data-d="50×50×18 cm" data-o="100 u impresas" data-p="210.00"><span class="pg-q">100 u</span><span class="pg-p">$210.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#6" data-d="50×50×18 cm" data-o="300 u impresas" data-p="510.00"><span class="pg-q">300 u</span><span class="pg-p">$510.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#6" data-d="50×50×18 cm" data-o="500 u impresas" data-p="810.00"><span class="pg-q">500 u</span><span class="pg-p">$810.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#6" data-d="50×50×18 cm" data-o="1000 u impresas" data-p="1500.00"><span class="pg-q">1000 u</span><span class="pg-p">$1,500.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/CX1.jpg" alt="CX-01">
-          <div class="pmeta">
-            <div class="pcode">CX-01</div>
-            <div class="pdims">32×30×12,5 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">CX-01</div><div class="pdims">32×30×12,5 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$10.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$75.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="CX-01" data-d="32×30×12,5 cm" data-o="Docena" data-p="10.00"><span class="pt-q">Docena</span><span class="pt-p">$10.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="CX-01" data-d="32×30×12,5 cm" data-o="Ciento" data-p="75.00"><span class="pt-q">Ciento</span><span class="pt-p">$75.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$115.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$265.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$415.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$750.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="CX-01" data-d="32×30×12,5 cm" data-o="100 u impresas" data-p="115.00"><span class="pg-q">100 u</span><span class="pg-p">$115.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-01" data-d="32×30×12,5 cm" data-o="300 u impresas" data-p="265.00"><span class="pg-q">300 u</span><span class="pg-p">$265.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-01" data-d="32×30×12,5 cm" data-o="500 u impresas" data-p="415.00"><span class="pg-q">500 u</span><span class="pg-p">$415.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-01" data-d="32×30×12,5 cm" data-o="1000 u impresas" data-p="750.00"><span class="pg-q">1000 u</span><span class="pg-p">$750.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/CX2.jpg" alt="CX-02">
-          <div class="pmeta">
-            <div class="pcode">CX-02</div>
-            <div class="pdims">33×42×14 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">CX-02</div><div class="pdims">33×42×14 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$90.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="CX-02" data-d="33×42×14 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="CX-02" data-d="33×42×14 cm" data-o="Ciento" data-p="90.00"><span class="pt-q">Ciento</span><span class="pt-p">$90.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$130.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$310.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$490.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$900.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="CX-02" data-d="33×42×14 cm" data-o="100 u impresas" data-p="130.00"><span class="pg-q">100 u</span><span class="pg-p">$130.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-02" data-d="33×42×14 cm" data-o="300 u impresas" data-p="310.00"><span class="pg-q">300 u</span><span class="pg-p">$310.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-02" data-d="33×42×14 cm" data-o="500 u impresas" data-p="490.00"><span class="pg-q">500 u</span><span class="pg-p">$490.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-02" data-d="33×42×14 cm" data-o="1000 u impresas" data-p="900.00"><span class="pg-q">1000 u</span><span class="pg-p">$900.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/CX3.jpg" alt="CX-03">
-          <div class="pmeta">
-            <div class="pcode">CX-03</div>
-            <div class="pdims">29×36×14 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">CX-03</div><div class="pdims">29×36×14 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$10.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$80.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="CX-03" data-d="29×36×14 cm" data-o="Docena" data-p="10.00"><span class="pt-q">Docena</span><span class="pt-p">$10.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="CX-03" data-d="29×36×14 cm" data-o="Ciento" data-p="80.00"><span class="pt-q">Ciento</span><span class="pt-p">$80.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$120.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$280.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$440.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$800.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="CX-03" data-d="29×36×14 cm" data-o="100 u impresas" data-p="120.00"><span class="pg-q">100 u</span><span class="pg-p">$120.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-03" data-d="29×36×14 cm" data-o="300 u impresas" data-p="280.00"><span class="pg-q">300 u</span><span class="pg-p">$280.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-03" data-d="29×36×14 cm" data-o="500 u impresas" data-p="440.00"><span class="pg-q">500 u</span><span class="pg-p">$440.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="CX-03" data-d="29×36×14 cm" data-o="1000 u impresas" data-p="800.00"><span class="pg-q">1000 u</span><span class="pg-p">$800.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       </div>
-      <div class="screen-cta"><a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20kraft%20con%20manija." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a></div>
     </div>
   </div>
 
-  <!-- ECO -->
   <div id="screen-eco" class="screen" hidden>
-    <div class="screen-head">
-      <button class="back-btn" onclick="showHome()">←</button>
-      <div class="stitle"><b>🌿 Fundas Ecológicas</b><small>Cartulina de caña de azúcar · 150 g</small></div>
-    </div>
+    <div class="screen-head"><button class="back-btn" onclick="showHome()">←</button><div class="stitle"><b>🌿 Fundas Ecológicas</b><small>Cartulina de caña de azúcar · 150 g</small></div></div>
     <div class="screen-body">
-      <p class="intro">Cartulina ecológica de <b>caña de azúcar, 150 g</b>. Incluye docena, ciento y precios de 100 a 1000 unidades impresas. IVA incluido.</p>
+      <p class="intro">Cartulina ecológica de <b>caña de azúcar, 150 g</b>. Docena, ciento y precios de 100 a 1000 unidades impresas. IVA incluido.<span class="tapnote">👉 Toca el precio que quieras para agregarlo a tu pedido.</span></p>
       <div class="pstack">
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB1e.jpg" alt="SB#1 eco">
-          <div class="pmeta">
-            <div class="pcode">SB#1 eco</div>
-            <div class="pdims">12×16×8 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#1 eco</div><div class="pdims">12×16×8 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$4.20</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$30.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#1 eco" data-d="12×16×8 cm" data-o="Docena" data-p="4.20"><span class="pt-q">Docena</span><span class="pt-p">$4.20</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#1 eco" data-d="12×16×8 cm" data-o="Ciento" data-p="30.00"><span class="pt-q">Ciento</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$60.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$120.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$180.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$300.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1 eco" data-d="12×16×8 cm" data-o="100 u impresas" data-p="60.00"><span class="pg-q">100 u</span><span class="pg-p">$60.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1 eco" data-d="12×16×8 cm" data-o="300 u impresas" data-p="120.00"><span class="pg-q">300 u</span><span class="pg-p">$120.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1 eco" data-d="12×16×8 cm" data-o="500 u impresas" data-p="180.00"><span class="pg-q">500 u</span><span class="pg-p">$180.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#1 eco" data-d="12×16×8 cm" data-o="1000 u impresas" data-p="300.00"><span class="pg-q">1000 u</span><span class="pg-p">$300.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB2e.jpg" alt="SB#2 eco">
-          <div class="pmeta">
-            <div class="pcode">SB#2 eco</div>
-            <div class="pdims">20×25×12 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#2 eco</div><div class="pdims">20×25×12 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$8.40</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$65.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#2 eco" data-d="20×25×12 cm" data-o="Docena" data-p="8.40"><span class="pt-q">Docena</span><span class="pt-p">$8.40</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#2 eco" data-d="20×25×12 cm" data-o="Ciento" data-p="65.00"><span class="pt-q">Ciento</span><span class="pt-p">$65.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$95.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$225.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$355.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$650.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2 eco" data-d="20×25×12 cm" data-o="100 u impresas" data-p="95.00"><span class="pg-q">100 u</span><span class="pg-p">$95.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2 eco" data-d="20×25×12 cm" data-o="300 u impresas" data-p="225.00"><span class="pg-q">300 u</span><span class="pg-p">$225.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2 eco" data-d="20×25×12 cm" data-o="500 u impresas" data-p="355.00"><span class="pg-q">500 u</span><span class="pg-p">$355.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#2 eco" data-d="20×25×12 cm" data-o="1000 u impresas" data-p="650.00"><span class="pg-q">1000 u</span><span class="pg-p">$650.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB3e.jpg" alt="SB#3 eco">
-          <div class="pmeta">
-            <div class="pcode">SB#3 eco</div>
-            <div class="pdims">24×33×11,5 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#3 eco</div><div class="pdims">24×33×11,5 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$90.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#3 eco" data-d="24×33×11,5 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#3 eco" data-d="24×33×11,5 cm" data-o="Ciento" data-p="90.00"><span class="pt-q">Ciento</span><span class="pt-p">$90.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$130.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$310.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$490.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$900.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3 eco" data-d="24×33×11,5 cm" data-o="100 u impresas" data-p="130.00"><span class="pg-q">100 u</span><span class="pg-p">$130.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3 eco" data-d="24×33×11,5 cm" data-o="300 u impresas" data-p="310.00"><span class="pg-q">300 u</span><span class="pg-p">$310.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3 eco" data-d="24×33×11,5 cm" data-o="500 u impresas" data-p="490.00"><span class="pg-q">500 u</span><span class="pg-p">$490.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#3 eco" data-d="24×33×11,5 cm" data-o="1000 u impresas" data-p="900.00"><span class="pg-q">1000 u</span><span class="pg-p">$900.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/SB4e.jpg" alt="SB#4 eco">
-          <div class="pmeta">
-            <div class="pcode">SB#4 eco</div>
-            <div class="pdims">29×36×12 cm</div>
-          </div>
+          <div class="pmeta"><div class="pcode">SB#4 eco</div><div class="pdims">29×36×12 cm</div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#4 eco" data-d="29×36×12 cm" data-o="Docena" data-p="15.00"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="SB#4 eco" data-d="29×36×12 cm" data-o="Ciento" data-p="115.00"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$155.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$385.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$615.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$1,150.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4 eco" data-d="29×36×12 cm" data-o="100 u impresas" data-p="155.00"><span class="pg-q">100 u</span><span class="pg-p">$155.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4 eco" data-d="29×36×12 cm" data-o="300 u impresas" data-p="385.00"><span class="pg-q">300 u</span><span class="pg-p">$385.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4 eco" data-d="29×36×12 cm" data-o="500 u impresas" data-p="615.00"><span class="pg-q">500 u</span><span class="pg-p">$615.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="SB#4 eco" data-d="29×36×12 cm" data-o="1000 u impresas" data-p="1150.00"><span class="pg-q">1000 u</span><span class="pg-p">$1,150.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C17b.jpg" alt="C-17 bristol">
-          <div class="pmeta">
-            <div class="pcode">C-17 bristol</div>
-            <div class="pdims">25×20×10 cm<span class="pdims-tag">cartulina natural</span></div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-17 bristol</div><div class="pdims">25×20×10 cm<span class="pdims-tag">cartulina natural</span></div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.80</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$60.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-17 bristol" data-d="25×20×10 cm" data-o="Docena" data-p="7.80"><span class="pt-q">Docena</span><span class="pt-p">$7.80</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-17 bristol" data-d="25×20×10 cm" data-o="Ciento" data-p="60.00"><span class="pt-q">Ciento</span><span class="pt-p">$60.00</span><span class="padd">＋</span></button>
         </div>
         <div class="pprint-cap">Con impresión de tu logo · 1 color</div>
         <div class="pgrid">
-          <div class="pg"><span class="pg-q">100 u</span><span class="pg-p">$90.00</span></div>
-          <div class="pg"><span class="pg-q">300 u</span><span class="pg-p">$210.00</span></div>
-          <div class="pg"><span class="pg-q">500 u</span><span class="pg-p">$330.00</span></div>
-          <div class="pg"><span class="pg-q">1000 u</span><span class="pg-p">$600.00</span></div>
+          <button class="pg" onclick="addCart(this)" data-n="C-17 bristol" data-d="25×20×10 cm" data-o="100 u impresas" data-p="90.00"><span class="pg-q">100 u</span><span class="pg-p">$90.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-17 bristol" data-d="25×20×10 cm" data-o="300 u impresas" data-p="210.00"><span class="pg-q">300 u</span><span class="pg-p">$210.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-17 bristol" data-d="25×20×10 cm" data-o="500 u impresas" data-p="330.00"><span class="pg-q">500 u</span><span class="pg-p">$330.00</span><span class="padd padd-s">＋</span></button>
+          <button class="pg" onclick="addCart(this)" data-n="C-17 bristol" data-d="25×20×10 cm" data-o="1000 u impresas" data-p="600.00"><span class="pg-q">1000 u</span><span class="pg-p">$600.00</span><span class="padd padd-s">＋</span></button>
         </div>
       </article>
       <article class="pcard">
         <div class="pcard-top">
           <img class="pthumb" src="assets/products/items/C17c.jpg" alt="C-17 color">
-          <div class="pmeta">
-            <div class="pcode">C-17 color</div>
-            <div class="pdims">25×20×10 cm<span class="pdims-tag">rojo o negro</span></div>
-          </div>
+          <div class="pmeta"><div class="pcode">C-17 color</div><div class="pdims">25×20×10 cm<span class="pdims-tag">rojo o negro</span></div></div>
         </div>
         <div class="ptable">
-          <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$10.80</span></div>
-          <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$80.00</span></div>
+          <button class="ptier" onclick="addCart(this)" data-n="C-17 color" data-d="25×20×10 cm" data-o="Docena" data-p="10.80"><span class="pt-q">Docena</span><span class="pt-p">$10.80</span><span class="padd">＋</span></button>
+          <button class="ptier" onclick="addCart(this)" data-n="C-17 color" data-d="25×20×10 cm" data-o="Ciento" data-p="80.00"><span class="pt-q">Ciento</span><span class="pt-p">$80.00</span><span class="padd">＋</span></button>
         </div>
-        <div class="pnote">Con impresión personalizada: consultar precio por WhatsApp</div>
+        <div class="pnote">Con impresión personalizada: consultar por WhatsApp</div>
       </article>
       </div>
-      <div class="screen-cta"><a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20fundas%20ecol%C3%B3gicas%20de%20cartulina." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a></div>
     </div>
   </div>
 
-  <!-- CAJAS -->
   <div id="screen-cajas" class="screen" hidden>
-    <div class="screen-head">
-      <button class="back-btn" onclick="showHome()">←</button>
-      <div class="stitle"><b>📦 Cajas de Cartón</b><small>Micro corrugado · agrupadas por tipo</small></div>
-    </div>
+    <div class="screen-head"><button class="back-btn" onclick="showHome()">←</button><div class="stitle"><b>📦 Cajas de Cartón</b><small>Micro corrugado · agrupadas por tipo</small></div></div>
     <div class="screen-body">
-      <p class="intro">Cajas de micro corrugado, <b>precio por docena y por ciento</b> (IVA incluido). A partir de 300 unidades consulta precio especial por WhatsApp.</p>
+      <p class="intro">Cajas de micro corrugado, <b>precio por docena y por ciento</b> (IVA incluido). Desde 300 unidades consulta precio especial.<span class="tapnote">👉 Toca el precio que quieras para agregarlo a tu pedido.</span></p>
       <div class="grouphd"><span class="grouphd-ic">🎁</span>Cajas Regalo</div>
       <div class="pstack">
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B7.jpg" alt="B7">
-            <div class="pmeta">
-              <div class="pcode">B7</div>
-              <div class="pdims">10×15×15 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B7</div><div class="pdims">10×15×15 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.20</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$55.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B7" data-d="10×15×15 cm" data-o="Docena" data-p="7.20"><span class="pt-q">Docena</span><span class="pt-p">$7.20</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B7" data-d="10×15×15 cm" data-o="Ciento" data-p="55.00"><span class="pt-q">Ciento</span><span class="pt-p">$55.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B8.jpg" alt="B8">
-            <div class="pmeta">
-              <div class="pcode">B8</div>
-              <div class="pdims">15×15×15 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B8</div><div class="pdims">15×15×15 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$9.60</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$75.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B8" data-d="15×15×15 cm" data-o="Docena" data-p="9.60"><span class="pt-q">Docena</span><span class="pt-p">$9.60</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B8" data-d="15×15×15 cm" data-o="Ciento" data-p="75.00"><span class="pt-q">Ciento</span><span class="pt-p">$75.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B30.jpg" alt="B30">
-            <div class="pmeta">
-              <div class="pcode">B30</div>
-              <div class="pdims">17,5×15,5×12 cm<span class="pdims-tag">estampado "Feliz Día"</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B30</div><div class="pdims">17,5×15,5×12 cm<span class="pdims-tag">estampado "Feliz Día"</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B30" data-d="17,5×15,5×12 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B30" data-d="17,5×15,5×12 cm" data-o="Ciento" data-p="95.00"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B10.jpg" alt="B10">
-            <div class="pmeta">
-              <div class="pcode">B10</div>
-              <div class="pdims">15×20×20 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B10</div><div class="pdims">15×20×20 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$16.60</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$130.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B10" data-d="15×20×20 cm" data-o="Docena" data-p="16.60"><span class="pt-q">Docena</span><span class="pt-p">$16.60</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B10" data-d="15×20×20 cm" data-o="Ciento" data-p="130.00"><span class="pt-q">Ciento</span><span class="pt-p">$130.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B9.jpg" alt="B9">
-            <div class="pmeta">
-              <div class="pcode">B9</div>
-              <div class="pdims">20×20×20 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B9</div><div class="pdims">20×20×20 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$18.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$140.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B9" data-d="20×20×20 cm" data-o="Docena" data-p="18.00"><span class="pt-q">Docena</span><span class="pt-p">$18.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B9" data-d="20×20×20 cm" data-o="Ciento" data-p="140.00"><span class="pt-q">Ciento</span><span class="pt-p">$140.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B11.jpg" alt="B11">
-            <div class="pmeta">
-              <div class="pcode">B11</div>
-              <div class="pdims">25×25×25 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B11</div><div class="pdims">25×25×25 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$230.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B11" data-d="25×25×25 cm" data-o="Docena" data-p="30.00"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B11" data-d="25×25×25 cm" data-o="Ciento" data-p="230.00"><span class="pt-q">Ciento</span><span class="pt-p">$230.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1090,53 +908,41 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B1.jpg" alt="B1">
-            <div class="pmeta">
-              <div class="pcode">B1</div>
-              <div class="pdims">14×20×12 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B1</div><div class="pdims">14×20×12 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.20</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$58.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B1" data-d="14×20×12 cm" data-o="Docena" data-p="7.20"><span class="pt-q">Docena</span><span class="pt-p">$7.20</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B1" data-d="14×20×12 cm" data-o="Ciento" data-p="58.00"><span class="pt-q">Ciento</span><span class="pt-p">$58.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B2.jpg" alt="B2">
-            <div class="pmeta">
-              <div class="pcode">B2</div>
-              <div class="pdims">22×22×16 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B2</div><div class="pdims">22×22×16 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B2" data-d="22×22×16 cm" data-o="Docena" data-p="15.00"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B2" data-d="22×22×16 cm" data-o="Ciento" data-p="115.00"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B3.jpg" alt="B3">
-            <div class="pmeta">
-              <div class="pcode">B3</div>
-              <div class="pdims">13,5×26×20 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B3</div><div class="pdims">13,5×26×20 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B3" data-d="13,5×26×20 cm" data-o="Docena" data-p="15.00"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B3" data-d="13,5×26×20 cm" data-o="Ciento" data-p="115.00"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B26.jpg" alt="B26">
-            <div class="pmeta">
-              <div class="pcode">B26</div>
-              <div class="pdims">36×34×23 cm<span class="pdims-tag">tamaño grande</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B26</div><div class="pdims">36×34×23 cm<span class="pdims-tag">tamaño grande</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$225.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B26" data-d="36×34×23 cm" data-o="Docena" data-p="30.00"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B26" data-d="36×34×23 cm" data-o="Ciento" data-p="225.00"><span class="pt-q">Ciento</span><span class="pt-p">$225.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1145,40 +951,31 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B4.jpg" alt="B4">
-            <div class="pmeta">
-              <div class="pcode">B4</div>
-              <div class="pdims">23×18×12 cm<span class="pdims-tag">botella 350 ml</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B4</div><div class="pdims">23×18×12 cm<span class="pdims-tag">botella 350 ml</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B4" data-d="23×18×12 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B4" data-d="23×18×12 cm" data-o="Ciento" data-p="95.00"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B5.jpg" alt="B5">
-            <div class="pmeta">
-              <div class="pcode">B5</div>
-              <div class="pdims">16×20×13,5 cm<span class="pdims-tag">botella 330 ml · 2 colores</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B5</div><div class="pdims">16×20×13,5 cm<span class="pdims-tag">botella 330 ml · 2 colores</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B5" data-d="16×20×13,5 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B5" data-d="16×20×13,5 cm" data-o="Ciento" data-p="95.00"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B6.jpg" alt="B6">
-            <div class="pmeta">
-              <div class="pcode">B6</div>
-              <div class="pdims">36×15×7,5 cm<span class="pdims-tag">para vinos</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B6</div><div class="pdims">36×15×7,5 cm<span class="pdims-tag">para vinos</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B6" data-d="36×15×7,5 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B6" data-d="36×15×7,5 cm" data-o="Ciento" data-p="95.00"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1187,66 +984,51 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B12.jpg" alt="B12">
-            <div class="pmeta">
-              <div class="pcode">B12</div>
-              <div class="pdims">22×22 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B12</div><div class="pdims">22×22 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$3.60</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$28.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B12" data-d="22×22 cm" data-o="Docena" data-p="3.60"><span class="pt-q">Docena</span><span class="pt-p">$3.60</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B12" data-d="22×22 cm" data-o="Ciento" data-p="28.00"><span class="pt-q">Ciento</span><span class="pt-p">$28.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B13.jpg" alt="B13">
-            <div class="pmeta">
-              <div class="pcode">B13</div>
-              <div class="pdims">26×26 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B13</div><div class="pdims">26×26 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$4.80</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B13" data-d="26×26 cm" data-o="Docena" data-p="4.80"><span class="pt-q">Docena</span><span class="pt-p">$4.80</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B13" data-d="26×26 cm" data-o="Ciento" data-p="38.00"><span class="pt-q">Ciento</span><span class="pt-p">$38.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B14.jpg" alt="B14">
-            <div class="pmeta">
-              <div class="pcode">B14</div>
-              <div class="pdims">31,5×31,5 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B14</div><div class="pdims">31,5×31,5 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.20</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$58.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B14" data-d="31,5×31,5 cm" data-o="Docena" data-p="7.20"><span class="pt-q">Docena</span><span class="pt-p">$7.20</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B14" data-d="31,5×31,5 cm" data-o="Ciento" data-p="58.00"><span class="pt-q">Ciento</span><span class="pt-p">$58.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B15.jpg" alt="B15">
-            <div class="pmeta">
-              <div class="pcode">B15</div>
-              <div class="pdims">38×38 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B15</div><div class="pdims">38×38 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$10.32</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$84.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B15" data-d="38×38 cm" data-o="Docena" data-p="10.32"><span class="pt-q">Docena</span><span class="pt-p">$10.32</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B15" data-d="38×38 cm" data-o="Ciento" data-p="84.00"><span class="pt-q">Ciento</span><span class="pt-p">$84.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B16.jpg" alt="B16">
-            <div class="pmeta">
-              <div class="pcode">B16</div>
-              <div class="pdims">42×42 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B16</div><div class="pdims">42×42 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$10.80</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$88.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B16" data-d="42×42 cm" data-o="Docena" data-p="10.80"><span class="pt-q">Docena</span><span class="pt-p">$10.80</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B16" data-d="42×42 cm" data-o="Ciento" data-p="88.00"><span class="pt-q">Ciento</span><span class="pt-p">$88.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1255,14 +1037,11 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B17.jpg" alt="B17">
-            <div class="pmeta">
-              <div class="pcode">B17</div>
-              <div class="pdims">8×25×20 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B17</div><div class="pdims">8×25×20 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B17" data-d="8×25×20 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B17" data-d="8×25×20 cm" data-o="Ciento" data-p="95.00"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1271,118 +1050,91 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B19.jpg" alt="B19">
-            <div class="pmeta">
-              <div class="pcode">B19</div>
-              <div class="pdims">6×23×17 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B19</div><div class="pdims">6×23×17 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B19" data-d="6×23×17 cm" data-o="Docena" data-p="12.00"><span class="pt-q">Docena</span><span class="pt-p">$12.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B19" data-d="6×23×17 cm" data-o="Ciento" data-p="95.00"><span class="pt-q">Ciento</span><span class="pt-p">$95.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B29.jpg" alt="B29">
-            <div class="pmeta">
-              <div class="pcode">B29</div>
-              <div class="pdims">6×17×12 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B29</div><div class="pdims">6×17×12 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$53.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B29" data-d="6×17×12 cm" data-o="Docena" data-p="7.00"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B29" data-d="6×17×12 cm" data-o="Ciento" data-p="53.00"><span class="pt-q">Ciento</span><span class="pt-p">$53.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B31.jpg" alt="B31">
-            <div class="pmeta">
-              <div class="pcode">B31</div>
-              <div class="pdims">6,5×23×9 cm<span class="pdims-tag">también para copas</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B31</div><div class="pdims">6,5×23×9 cm<span class="pdims-tag">también para copas</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$53.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B31" data-d="6,5×23×9 cm" data-o="Docena" data-p="7.00"><span class="pt-q">Docena</span><span class="pt-p">$7.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B31" data-d="6,5×23×9 cm" data-o="Ciento" data-p="53.00"><span class="pt-q">Ciento</span><span class="pt-p">$53.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B18.jpg" alt="B18">
-            <div class="pmeta">
-              <div class="pcode">B18</div>
-              <div class="pdims">6×22×22 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B18</div><div class="pdims">6×22×22 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B18" data-d="6×22×22 cm" data-o="Docena" data-p="15.00"><span class="pt-q">Docena</span><span class="pt-p">$15.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B18" data-d="6×22×22 cm" data-o="Ciento" data-p="115.00"><span class="pt-q">Ciento</span><span class="pt-p">$115.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B20.jpg" alt="B20">
-            <div class="pmeta">
-              <div class="pcode">B20</div>
-              <div class="pdims">8×25,5×20,5 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B20</div><div class="pdims">8×25,5×20,5 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$18.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$140.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B20" data-d="8×25,5×20,5 cm" data-o="Docena" data-p="18.00"><span class="pt-q">Docena</span><span class="pt-p">$18.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B20" data-d="8×25,5×20,5 cm" data-o="Ciento" data-p="140.00"><span class="pt-q">Ciento</span><span class="pt-p">$140.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B22.jpg" alt="B22">
-            <div class="pmeta">
-              <div class="pcode">B22</div>
-              <div class="pdims">10,5×31×21 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B22</div><div class="pdims">10,5×31×21 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$24.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$180.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B22" data-d="10,5×31×21 cm" data-o="Docena" data-p="24.00"><span class="pt-q">Docena</span><span class="pt-p">$24.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B22" data-d="10,5×31×21 cm" data-o="Ciento" data-p="180.00"><span class="pt-q">Ciento</span><span class="pt-p">$180.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B21.jpg" alt="B21">
-            <div class="pmeta">
-              <div class="pcode">B21</div>
-              <div class="pdims">10,5×32×25 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B21</div><div class="pdims">10,5×32×25 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$230.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B21" data-d="10,5×32×25 cm" data-o="Docena" data-p="30.00"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B21" data-d="10,5×32×25 cm" data-o="Ciento" data-p="230.00"><span class="pt-q">Ciento</span><span class="pt-p">$230.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B23.jpg" alt="B23">
-            <div class="pmeta">
-              <div class="pcode">B23</div>
-              <div class="pdims">11×33×22 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B23</div><div class="pdims">11×33×22 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$225.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B23" data-d="11×33×22 cm" data-o="Docena" data-p="30.00"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B23" data-d="11×33×22 cm" data-o="Ciento" data-p="225.00"><span class="pt-q">Ciento</span><span class="pt-p">$225.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B24.jpg" alt="B24">
-            <div class="pmeta">
-              <div class="pcode">B24</div>
-              <div class="pdims">11×38×28 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B24</div><div class="pdims">11×38×28 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$36.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$270.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B24" data-d="11×38×28 cm" data-o="Docena" data-p="36.00"><span class="pt-q">Docena</span><span class="pt-p">$36.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B24" data-d="11×38×28 cm" data-o="Ciento" data-p="270.00"><span class="pt-q">Ciento</span><span class="pt-p">$270.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1391,14 +1143,11 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B25.jpg" alt="B25">
-            <div class="pmeta">
-              <div class="pcode">B25</div>
-              <div class="pdims">15×35×35 cm</div>
-            </div>
+            <div class="pmeta"><div class="pcode">B25</div><div class="pdims">15×35×35 cm</div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$225.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B25" data-d="15×35×35 cm" data-o="Docena" data-p="30.00"><span class="pt-q">Docena</span><span class="pt-p">$30.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B25" data-d="15×35×35 cm" data-o="Ciento" data-p="225.00"><span class="pt-q">Ciento</span><span class="pt-p">$225.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1407,27 +1156,21 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B27.jpg" alt="B27">
-            <div class="pmeta">
-              <div class="pcode">B27</div>
-              <div class="pdims">15×18×9 cm<span class="pdims-tag">porta vasos x2</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B27</div><div class="pdims">15×18×9 cm<span class="pdims-tag">porta vasos x2</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$4.80</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$35.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B27" data-d="15×18×9 cm" data-o="Docena" data-p="4.80"><span class="pt-q">Docena</span><span class="pt-p">$4.80</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B27" data-d="15×18×9 cm" data-o="Ciento" data-p="35.00"><span class="pt-q">Ciento</span><span class="pt-p">$35.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B28.jpg" alt="B28">
-            <div class="pmeta">
-              <div class="pcode">B28</div>
-              <div class="pdims">6×30×25 cm<span class="pdims-tag">bandeja desayuno</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B28</div><div class="pdims">6×30×25 cm<span class="pdims-tag">bandeja desayuno</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$9.00</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$170.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B28" data-d="6×30×25 cm" data-o="Docena" data-p="9.00"><span class="pt-q">Docena</span><span class="pt-p">$9.00</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B28" data-d="6×30×25 cm" data-o="Ciento" data-p="170.00"><span class="pt-q">Ciento</span><span class="pt-p">$170.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1436,27 +1179,21 @@
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B32.jpg" alt="B32">
-            <div class="pmeta">
-              <div class="pcode">B32</div>
-              <div class="pdims">7×12×8 cm<span class="pdims-tag">multiusos</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B32</div><div class="pdims">7×12×8 cm<span class="pdims-tag">multiusos</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$5.40</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$40.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B32" data-d="7×12×8 cm" data-o="Docena" data-p="5.40"><span class="pt-q">Docena</span><span class="pt-p">$5.40</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B32" data-d="7×12×8 cm" data-o="Ciento" data-p="40.00"><span class="pt-q">Ciento</span><span class="pt-p">$40.00</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard">
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B33.jpg" alt="B33">
-            <div class="pmeta">
-              <div class="pcode">B33</div>
-              <div class="pdims">10×10×9 cm<span class="pdims-tag">para jarro</span></div>
-            </div>
+            <div class="pmeta"><div class="pcode">B33</div><div class="pdims">10×10×9 cm<span class="pdims-tag">para jarro</span></div></div>
           </div>
           <div class="ptable">
-            <div class="ptier"><span class="pt-q">Docena</span><span class="pt-p">$5.40</span></div>
-            <div class="ptier"><span class="pt-q">Ciento</span><span class="pt-p">$40.00</span></div>
+            <button class="ptier" onclick="addCart(this)" data-n="B33" data-d="10×10×9 cm" data-o="Docena" data-p="5.40"><span class="pt-q">Docena</span><span class="pt-p">$5.40</span><span class="padd">＋</span></button>
+            <button class="ptier" onclick="addCart(this)" data-n="B33" data-d="10×10×9 cm" data-o="Ciento" data-p="40.00"><span class="pt-q">Ciento</span><span class="pt-p">$40.00</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1466,7 +1203,7 @@
           <div class="pcard-top">
             <img class="pthumb" src="assets/products/items/B34.jpg" alt="B34">
             <div class="pmeta"><div class="pcode">B34</div><div class="pdims">plancha 150×120 cm · 2 mm · café ambos lados</div></div>
-            <div class="psingle"><span class="ps-p">$3.50</span><span class="ps-u">por unidad</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="B34" data-d="plancha 150×120 cm · 2 mm · café ambos lados" data-o="por unidad" data-p="3.50"><span class="ps-p">$3.50</span><span class="ps-u">por unidad</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
@@ -1475,57 +1212,121 @@
       <div class="pstack">
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">7,5×28×28 cm</div></div>
-            <div class="psingle"><span class="ps-p">$2.00</span><span class="ps-u">c/u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="7,5×28×28 cm" data-d="" data-o="c/u" data-p="2.00"><span class="ps-p">$2.00</span><span class="ps-u">c/u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">30×30×12 cm</div></div>
-            <div class="psingle"><span class="ps-p">$3.00</span><span class="ps-u">c/u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="30×30×12 cm" data-d="" data-o="c/u" data-p="3.00"><span class="ps-p">$3.00</span><span class="ps-u">c/u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">38×32×9 cm</div></div>
-            <div class="psingle"><span class="ps-p">$3.00</span><span class="ps-u">c/u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="38×32×9 cm" data-d="" data-o="c/u" data-p="3.00"><span class="ps-p">$3.00</span><span class="ps-u">c/u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">25×25×10 cm</div></div>
-            <div class="psingle"><span class="ps-p">$2.00</span><span class="ps-u">c/u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="25×25×10 cm" data-d="" data-o="c/u" data-p="2.00"><span class="ps-p">$2.00</span><span class="ps-u">c/u</span><span class="padd">＋</span></button>
           </div>
         </article>
         <article class="pcard pcard-simple">
           <div class="pcard-top">
-            <div class="pthumb pthumb-ph">📦</div>
+            <div class="pthumb pthumb-ph">🛍️</div>
             <div class="pmeta"><div class="pcode">31×16,8×10,5 cm</div></div>
-            <div class="psingle"><span class="ps-p">$1.85</span><span class="ps-u">c/u</span></div>
+            <button class="psingle" onclick="addCart(this)" data-n="31×16,8×10,5 cm" data-d="" data-o="c/u" data-p="1.85"><span class="ps-p">$1.85</span><span class="ps-u">c/u</span><span class="padd">＋</span></button>
           </div>
         </article>
       </div>
-      <div class="screen-cta"><a class="btn btn-primary" href="https://wa.me/593979707152?text=Hola%20Sofi%20Graf%2C%20quisiera%20cotizar%20cajas%20de%20cart%C3%B3n." target="_blank" rel="noopener">💬 Cotizar por WhatsApp</a></div>
     </div>
   </div>
 
+  <div id="screen-cart" class="screen" hidden>
+    <div class="screen-head"><button class="back-btn" onclick="closeCart()">←</button><div class="stitle"><b>🛒 Mi pedido</b><small>Revísalo y envíalo por WhatsApp</small></div></div>
+    <div class="screen-body">
+      <div id="cart-empty" class="intro" hidden>Tu pedido está vacío. Toca el precio de cualquier producto para agregarlo.</div>
+      <div id="cart-items"></div>
+      <div id="cart-summary" hidden>
+        <div class="cart-total"><span>Total estimado</span><b id="cart-total-val">$0.00</b></div>
+        <input id="cart-name" class="cart-input" type="text" placeholder="Tu nombre (opcional)">
+        <button class="btn btn-primary" onclick="sendOrder()">💬 Enviar pedido por WhatsApp</button>
+        <p class="hint">El total es referencial; nuestro equipo confirma stock, impresión y envío al recibir tu pedido.</p>
+        <button class="cart-clear" onclick="clearCart()">Vaciar pedido</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="cartbar" class="cartbar" hidden onclick="openCart()">
+    <span class="cartbar-ic">🛒<span class="cartbar-badge" id="cartbar-badge">0</span></span>
+    <span class="cartbar-txt">Ver mi pedido</span>
+    <span class="cartbar-total" id="cartbar-total">$0.00</span>
+    <span class="cartbar-cta">›</span>
+  </button>
+
 </div>
 <script>
-  function showScreen(id){
-    document.getElementById('home').hidden=true;
-    document.querySelectorAll('.screen').forEach(function(s){s.hidden=true;});
-    document.getElementById(id).hidden=false;
-    window.scrollTo(0,0);
+  var CART={},NID=1;
+  function findKey(n,o){for(var k in CART){if(CART[k].n===n&&CART[k].o===o)return k;}return null;}
+  function addCart(el){
+    var n=el.getAttribute('data-n'),d=el.getAttribute('data-d')||'',o=el.getAttribute('data-o'),p=parseFloat(el.getAttribute('data-p'));
+    var k=findKey(n,o);
+    if(k){CART[k].qty++;}else{CART[String(NID)]={n:n,d:d,o:o,p:p,qty:1};NID++;}
+    el.classList.remove('added');void el.offsetWidth;el.classList.add('added');
+    updateBar();
   }
-  function showHome(){
-    document.querySelectorAll('.screen').forEach(function(s){s.hidden=true;});
-    document.getElementById('home').hidden=false;
-    window.scrollTo(0,0);
+  function chg(k,dv){if(!CART[k])return;CART[k].qty+=dv;if(CART[k].qty<=0)delete CART[k];renderCart();updateBar();}
+  function clearCart(){CART={};renderCart();updateBar();}
+  function cartStats(){var c=0,t=0;for(var k in CART){c+=CART[k].qty;t+=CART[k].p*CART[k].qty;}return{c:c,t:t};}
+  function updateBar(){
+    var s=cartStats(),bar=document.getElementById('cartbar');
+    if(s.c>0 && document.getElementById('screen-cart').hidden){
+      bar.hidden=false;
+      document.getElementById('cartbar-badge').textContent=s.c;
+      document.getElementById('cartbar-total').textContent='$'+s.t.toFixed(2);
+    }else{bar.hidden=true;}
   }
+  function renderCart(){
+    var wrap=document.getElementById('cart-items'),keys=Object.keys(CART),html='';
+    var s=cartStats();
+    if(keys.length===0){
+      document.getElementById('cart-empty').hidden=false;
+      document.getElementById('cart-summary').hidden=true;
+      wrap.innerHTML='';return;
+    }
+    document.getElementById('cart-empty').hidden=true;
+    document.getElementById('cart-summary').hidden=false;
+    keys.forEach(function(k){
+      var it=CART[k],sub=it.p*it.qty;
+      html+='<div class="citem"><div class="citem-info"><div class="citem-n">'+it.n+(it.d?' <span>'+it.d+'</span>':'')+'</div><div class="citem-o">'+it.o+' · $'+it.p.toFixed(2)+' c/u</div></div>'+
+        '<div class="citem-qty"><button onclick="chg(\''+k+'\',-1)">−</button><span>'+it.qty+'</span><button onclick="chg(\''+k+'\',1)">+</button></div>'+
+        '<div class="citem-sub">$'+sub.toFixed(2)+'</div></div>';
+    });
+    wrap.innerHTML=html;
+    document.getElementById('cart-total-val').textContent='$'+s.t.toFixed(2);
+  }
+  function openCart(){document.getElementById('home').hidden=true;document.querySelectorAll('.screen').forEach(function(s){s.hidden=true;});document.getElementById('screen-cart').hidden=false;renderCart();updateBar();window.scrollTo(0,0);}
+  function closeCart(){document.getElementById('screen-cart').hidden=true;document.getElementById('home').hidden=false;updateBar();window.scrollTo(0,0);}
+  function sendOrder(){
+    var keys=Object.keys(CART);if(keys.length===0)return;
+    var msg='🛍️ *PRE-PEDIDO SOFI GRAF*\n\n',i=1,t=0;
+    keys.forEach(function(k){var it=CART[k],sub=it.p*it.qty;t+=sub;
+      msg+=i+'. '+it.n+(it.d?' ('+it.d+')':'')+'\n   '+it.o+' x'+it.qty+' = $'+sub.toFixed(2)+'\n';i++;});
+    msg+='\n💰 Total estimado: $'+t.toFixed(2);
+    var nm=document.getElementById('cart-name').value.trim();
+    if(nm)msg+='\n👤 Nombre: '+nm;
+    msg+='\n\n(Enviado desde el menú digital)';
+    window.open('https://wa.me/593979707152?text='+encodeURIComponent(msg),'_blank');
+  }
+  function showScreen(id){document.getElementById('home').hidden=true;document.querySelectorAll('.screen').forEach(function(s){s.hidden=true;});document.getElementById(id).hidden=false;updateBar();window.scrollTo(0,0);}
+  function showHome(){document.querySelectorAll('.screen').forEach(function(s){s.hidden=true;});document.getElementById('home').hidden=false;updateBar();window.scrollTo(0,0);}
 </script>
 </body>
 </html>
